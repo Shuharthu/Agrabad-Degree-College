@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Admission Status | Agrabad Degree College</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Main Public Header -->
+  <header class="header-main">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo/logo-crest.svg" alt="Agrabad Degree College Crest" class="brand-crest">
+        <div class="brand-texts">
+          <span class="brand-name">Agrabad Degree College</span>
+          <span class="brand-subtext">Application Tracker</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="programs.html" class="nav-link">Programs</a>
+        <a href="admissions.html" class="nav-link">Apply Online</a>
+        <a href="admission-status.html" class="nav-link active">Track Status</a>
+        <a href="login.html" class="nav-link">Student Login</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="admissions.html" class="btn btn-primary btn-sm">Apply Now</a>
+      </div>
+
+      <button class="mobile-toggle-btn" aria-label="Toggle navigation menu">
+        <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-menu"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="page-hero" style="padding: 2.5rem 1.25rem;">
+    <div class="container">
+      <div class="breadcrumb-nav" style="margin-bottom: 0.5rem;">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="admissions.html">Admissions</a>
+        <span>/</span>
+        <span style="color: #fff;">Application Tracker</span>
+      </div>
+      <h1 class="page-hero-title">Track Admission Status</h1>
+      <p class="page-hero-subtitle">
+        Enter your Application Reference Number, Mobile Number, or SSC Roll to view your live admission progress.
+      </p>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top: 2.5rem;">
+    <div class="container" style="max-width: 780px;">
+
+      <!-- Search Input Card -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <div class="card-body">
+          <form id="track-form">
+            <label class="form-label" for="track-query-input">
+              Enter Application Reference (e.g. <code>ADC-2025-0101</code>) or Mobile:
+            </label>
+            <div style="display: flex; gap: 0.75rem;">
+              <input type="text" id="track-query-input" class="form-control" placeholder="ADC-2025-0101" required>
+              <button type="submit" class="btn btn-primary" style="flex-shrink: 0;">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-search"></use></svg>
+                Track Status
+              </button>
+            </div>
+            <div class="form-hint">
+              Demo References to test: <code>ADC-2025-0101</code> (Approved), <code>ADC-2025-0102</code> (Under Review), <code>ADC-2025-0103</code> (Documents Required), <code>ADC-2025-0104</code> (Shortlisted)
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Result Card Container -->
+      <div id="track-result-container" style="display: none;">
+        <div class="card" id="applicant-card-content">
+          <div class="card-header">
+            <div>
+              <span class="text-muted" style="font-size: 0.75rem; text-transform: uppercase;">Application Reference</span>
+              <div class="fw-bold text-navy" id="res-ref-number" style="font-size: 1.25rem; font-family: var(--font-mono);">-</div>
+            </div>
+            <span class="badge" id="res-status-badge">Under Review</span>
+          </div>
+
+          <div class="card-body">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; font-size: 0.9rem; margin-bottom: 1.5rem;">
+              <div><strong>Applicant Name:</strong> <span id="res-fullname">-</span></div>
+              <div><strong>Desired Program:</strong> <span id="res-program">-</span></div>
+              <div><strong>Department / Group:</strong> <span id="res-dept">-</span></div>
+              <div><strong>SSC Board & GPA:</strong> <span id="res-ssc">-</span></div>
+              <div><strong>Mobile:</strong> <span id="res-mobile">-</span></div>
+              <div><strong>Submission Date:</strong> <span id="res-date">-</span></div>
+            </div>
+
+            <!-- Committee Remarks Alert -->
+            <div style="background: var(--color-slate-50); border-left: 4px solid var(--color-blue-primary); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1.5rem;">
+              <strong style="color: var(--color-navy); display: block; margin-bottom: 0.25rem;">Admission Committee Remarks:</strong>
+              <div id="res-remarks" class="text-muted" style="font-size: 0.88rem;">-</div>
+            </div>
+
+            <div class="d-flex justify-between align-center" style="border-top: 1px solid var(--color-slate-200); padding-top: 1.25rem;">
+              <button onclick="window.print()" class="btn btn-outline btn-sm">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-printer"></use></svg>
+                Print Slip
+              </button>
+              <div id="next-action-area"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Not Found Alert -->
+      <div id="track-not-found" class="empty-state" style="display: none;">
+        <svg class="icon empty-state-icon text-muted" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-alert"></use></svg>
+        <div class="empty-state-title">No Record Found</div>
+        <p class="empty-state-text">
+          We could not locate any admission record matching your query. Please check your Reference Number or contact the admission office.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container text-center" style="font-size: 0.8125rem; color: var(--color-slate-400);">
+      &copy; 2025 Agrabad Degree College, Chattogram. Admission Help Desk: +880 31 714520.
+    </div>
+  </footer>
+
+  <script type="module">
+    import { AdmissionManager } from './js/admissions.js';
+    import { formatDate } from './js/utilities.js';
+    import { initGlobalNavigation } from './js/navigation.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initGlobalNavigation();
+
+      const form = document.getElementById('track-form');
+      const input = document.getElementById('track-query-input');
+      const resultContainer = document.getElementById('track-result-container');
+      const notFoundContainer = document.getElementById('track-not-found');
+
+      const performSearch = (val) => {
+        if (!val) return;
+        const app = AdmissionManager.trackStatus(val);
+
+        if (app) {
+          notFoundContainer.style.display = 'none';
+          resultContainer.style.display = 'block';
+
+          document.getElementById('res-ref-number').textContent = app.refNumber;
+          document.getElementById('res-fullname').textContent = app.fullName;
+          document.getElementById('res-program').textContent = app.program;
+          document.getElementById('res-dept').textContent = app.department;
+          document.getElementById('res-ssc').textContent = `GPA ${app.sscGpa} (${app.sscBoard})`;
+          document.getElementById('res-mobile').textContent = app.mobile;
+          document.getElementById('res-date').textContent = formatDate(app.submittedAt);
+          document.getElementById('res-remarks').textContent = app.remarks || 'Your application is currently under academic scrutiny.';
+
+          const badge = document.getElementById('res-status-badge');
+          badge.textContent = app.status;
+          badge.className = 'badge';
+          if (app.status === 'Approved') badge.classList.add('badge-paid');
+          else if (app.status === 'Rejected') badge.classList.add('badge-danger');
+          else if (app.status === 'Shortlisted') badge.classList.add('badge-shortlisted');
+          else if (app.status === 'Documents Required') badge.classList.add('badge-warning');
+          else badge.classList.add('badge-review');
+
+          const nextArea = document.getElementById('next-action-area');
+          if (app.status === 'Approved') {
+            nextArea.innerHTML = `<a href="login.html" class="btn btn-success btn-sm">Proceed to Student Login & Fees</a>`;
+          } else if (app.status === 'Documents Required') {
+            nextArea.innerHTML = `<a href="contact.html" class="btn btn-warning btn-sm">Contact Admission Desk</a>`;
+          } else {
+            nextArea.innerHTML = `<span class="text-muted" style="font-size: 0.8125rem;">Next update expected within 48 hours.</span>`;
+          }
+        } else {
+          resultContainer.style.display = 'none';
+          notFoundContainer.style.display = 'block';
+        }
+      };
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        performSearch(input.value.trim());
+      });
+
+      // If URL has ref query param (?ref=ADC-2025-0101)
+      const urlParams = new URLSearchParams(window.location.search);
+      const queryParam = urlParams.get('ref') || urlParams.get('id');
+      if (queryParam) {
+        input.value = queryParam;
+        performSearch(queryParam);
+      }
+    });
+  </script>
+</body>
+</html>

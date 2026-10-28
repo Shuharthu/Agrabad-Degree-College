@@ -1,0 +1,49 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isImageOrPdf() {
+      return request.resource.contentType.matches('image/.*') || 
+             request.resource.contentType == 'application/pdf';
+    }
+
+    function isUnderMaxSize(maxMegabytes) {
+      return request.resource.size < maxMegabytes * 1024 * 1024;
+    }
+
+    // Default deny
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+
+    // Public Assets (Logos, badges, public banners)
+    match /public/{allFiles=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Admission Documents (Photos, SSC Marksheets, Testimonials)
+    match /admissions/{refNumber}/{documentName} {
+      // Allow upload during submission if image or PDF and <= 5MB
+      allow write: if isImageOrPdf() && isUnderMaxSize(5);
+      // Read allowed by admission admin or authenticated applicant
+      allow read: if isAuthenticated();
+    }
+
+    // Student Avatars
+    match /avatars/{userId}/{fileName} {
+      allow read: if true;
+      allow write: if isAuthenticated() && request.auth.uid == userId && isImageOrPdf() && isUnderMaxSize(2);
+    }
+
+    // Teacher Syllabus & Learning Resources
+    match /resources/{courseCode}/{fileName} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && isImageOrPdf() && isUnderMaxSize(10);
+    }
+  }
+}

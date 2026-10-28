@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fee Payment & History | Agrabad Degree College</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <img src="assets/logo/logo-crest.svg" alt="Agrabad Crest" class="sidebar-crest">
+        <div>
+          <div class="sidebar-brand-name">Agrabad</div>
+          <div class="sidebar-brand-sub">Degree College</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="student-dashboard.html" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-dashboard"></use></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="profile.html" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-user"></use></svg>
+          <span>Profile</span>
+        </a>
+        <a href="student-dashboard.html#section-courses" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-book"></use></svg>
+          <span>My Courses</span>
+        </a>
+        <a href="student-dashboard.html#section-routine" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-calendar"></use></svg>
+          <span>Routine</span>
+        </a>
+        <a href="student-dashboard.html#section-attendance" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-check-circle"></use></svg>
+          <span>Attendance</span>
+        </a>
+        <a href="student-dashboard.html#section-results" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-award"></use></svg>
+          <span>Exam Results</span>
+        </a>
+        <a href="notices.html" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-bell"></use></svg>
+          <span>Notices</span>
+        </a>
+        <a href="payments.html" class="sidebar-link active">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-wallet"></use></svg>
+          <span>Payments</span>
+        </a>
+        <a href="profile.html" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-settings"></use></svg>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="sidebar-logout-btn">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-logout"></use></svg>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" aria-label="Toggle sidebar">
+            <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-menu"></use></svg>
+          </button>
+          <div class="topbar-greeting">
+            <h2>Fee Payment & Accounts Ledger</h2>
+            <p>Pay academic fees securely via Bangladesh mobile banking, cards, or bank transfer.</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="topbar-user-profile">
+            <div class="topbar-avatar">SB</div>
+            <div class="topbar-user-info">
+              <span class="topbar-user-name user-display-name">Shuvo Barua</span>
+              <span class="topbar-user-role user-role-badge">Student</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        
+        <!-- Two Column Layout matching Screenshot 4: Left Payment Form, Right Payment History -->
+        <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2rem;">
+          
+          <!-- Left Column: Payable Dues & Gateway Selector -->
+          <div>
+            
+            <!-- Outstanding Total Due Card -->
+            <div class="card" style="margin-bottom: 1.5rem; border-left: 5px solid var(--color-warning);">
+              <div class="card-body d-flex justify-between align-center">
+                <div>
+                  <span class="text-muted" style="font-size: 0.8125rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">Total Outstanding Due</span>
+                  <div id="total-due-amount" style="font-size: 2.25rem; font-weight: 800; color: var(--color-navy); line-height: 1.1;">
+                    ৳ 2,500
+                  </div>
+                </div>
+                <span class="badge badge-pending" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">Pending</span>
+              </div>
+            </div>
+
+            <!-- Pending Fees List (Selectable) -->
+            <div style="margin-bottom: 1.75rem;">
+              <h4 style="font-size: 1rem; color: var(--color-navy); margin-bottom: 0.75rem;">Select Fee to Pay</h4>
+              <div id="pending-fees-container">
+                <!-- Populated via payments.js -->
+              </div>
+            </div>
+
+            <!-- Payment Method Selection Grid -->
+            <div style="margin-bottom: 2rem;">
+              <h4 style="font-size: 1rem; color: var(--color-navy); margin-bottom: 0.75rem;">Select Payment Method</h4>
+              
+              <div class="payment-methods-grid">
+                
+                <!-- bKash -->
+                <div class="payment-method-card selected" data-method="bKash">
+                  <div class="payment-logo bkash">bKash</div>
+                  <div>
+                    <div class="fw-bold text-navy">bKash</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">Direct Wallet Checkout</div>
+                  </div>
+                  <input type="radio" name="pay_gateway" value="bKash" class="payment-method-radio" checked>
+                </div>
+
+                <!-- Nagad -->
+                <div class="payment-method-card" data-method="Nagad">
+                  <div class="payment-logo nagad">Nagad</div>
+                  <div>
+                    <div class="fw-bold text-navy">Nagad</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">Postal Digital Cash</div>
+                  </div>
+                  <input type="radio" name="pay_gateway" value="Nagad" class="payment-method-radio">
+                </div>
+
+                <!-- Card -->
+                <div class="payment-method-card" data-method="Card (Visa/Mastercard)">
+                  <div class="payment-logo card">Card</div>
+                  <div>
+                    <div class="fw-bold text-navy">Debit / Credit Card</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">Visa, Mastercard, Nexus</div>
+                  </div>
+                  <input type="radio" name="pay_gateway" value="Card" class="payment-method-radio">
+                </div>
+
+                <!-- Bank Transfer -->
+                <div class="payment-method-card" data-method="Bank Transfer (Sonali Bank)">
+                  <div class="payment-logo bank">Bank</div>
+                  <div>
+                    <div class="fw-bold text-navy">Bank Transfer</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">Sonali Bank / Challan</div>
+                  </div>
+                  <input type="radio" name="pay_gateway" value="Bank" class="payment-method-radio">
+                </div>
+
+              </div>
+
+              <button type="button" class="btn btn-primary btn-block btn-lg" id="btn-initiate-payment">
+                Proceed to Pay
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-chevron-right"></use></svg>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Payment History Table -->
+          <div>
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Payment History</h3>
+                <span class="badge badge-paid">Verified Receipts</span>
+              </div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Fee Details</th>
+                      <th>Amount</th>
+                      <th>Method</th>
+                      <th>Status</th>
+                      <th>Receipt</th>
+                    </tr>
+                  </thead>
+                  <tbody id="payment-history-tbody">
+                    <!-- Populated via payments.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Gateway Simulation Modal (bKash / Nagad / Cards) -->
+  <div class="modal-backdrop" id="modal-payment-gateway">
+    <div class="modal-dialog" style="max-width: 480px;">
+      
+      <!-- Stage 1 & 2: Interactive Payment Details -->
+      <div id="gw-stage-1">
+        <div class="modal-header" style="background: #0c2340; color: #fff;">
+          <div class="d-flex align-center gap-2">
+            <span id="gw-method-logo" class="badge badge-paid">bKash</span>
+            <h3 class="modal-title" style="color: #fff;" id="gw-modal-title">Secure Payment Gateway</h3>
+          </div>
+          <button class="modal-close-btn" style="color: #fff;">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="text-center" style="margin-bottom: 1.5rem; padding: 1rem; background: var(--color-slate-50); border-radius: var(--radius-md);">
+            <div class="text-muted" style="font-size: 0.8125rem;">Transaction For</div>
+            <div class="fw-bold text-navy" id="gw-fee-title" style="font-size: 1.1rem;">-</div>
+            <div class="fw-bold text-primary" id="gw-fee-amount" style="font-size: 1.8rem; color: var(--color-blue-primary); margin-top: 0.25rem;">৳ 0</div>
+            <div class="text-muted" style="font-size: 0.75rem;">Ref: <span id="gw-txn-ref">-</span></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="gw-phone-input">Mobile Wallet Account Number</label>
+            <input type="tel" id="gw-phone-input" class="form-control" placeholder="01XXXXXXXXX" value="01812345678">
+            <div class="form-hint">Enter your 11-digit mobile wallet number</div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline modal-close-btn">Cancel</button>
+          <button type="button" class="btn btn-primary" id="btn-gw-send-otp">Proceed to Verify</button>
+        </div>
+      </div>
+
+      <!-- Stage 2: OTP & PIN Input -->
+      <div id="gw-stage-2" style="display: none;">
+        <div class="modal-header" style="background: #0c2340; color: #fff;">
+          <h3 class="modal-title" style="color: #fff;">Security Verification</h3>
+          <button class="modal-close-btn" style="color: #fff;">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="gw-otp-input">Verification Code (OTP)</label>
+            <input type="text" id="gw-otp-input" class="form-control" value="123456" placeholder="Enter 6-digit OTP">
+            <div class="form-hint">Sandbox OTP is prefilled (123456)</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="gw-pin-input">Wallet PIN</label>
+            <input type="password" id="gw-pin-input" class="form-control" placeholder="••••" value="1234" maxlength="5">
+            <div class="form-hint">Your PIN is processed via 256-bit encrypted SSL</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline modal-close-btn">Cancel</button>
+          <button type="button" class="btn btn-success" id="btn-gw-confirm-payment">Confirm & Pay</button>
+        </div>
+      </div>
+
+      <!-- Stage 3: Verification Processing Spinner -->
+      <div id="gw-stage-processing" style="display: none; padding: 3rem 2rem; text-align: center;">
+        <div class="stat-icon-wrap blue" style="width: 64px; height: 64px; margin: 0 auto 1.5rem auto; animation: spin 1.2s linear infinite;">
+          <svg class="icon icon-lg" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-clock"></use></svg>
+        </div>
+        <h3 style="color: var(--color-navy); margin-bottom: 0.5rem;">Verifying Payment with Gateway...</h3>
+        <p class="text-muted" style="font-size: 0.88rem; margin: 0;">Updating college fee ledger and generating official money receipt.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Official Printable Money Receipt Modal -->
+  <div class="modal-backdrop" id="modal-receipt">
+    <div class="modal-dialog modal-dialog-lg">
+      <div class="modal-header">
+        <h3 class="modal-title">Official Money Receipt</h3>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body" style="background: #f8fafc; padding: 2rem;">
+        
+        <!-- Physical Receipt Print Layout -->
+        <div class="printable-receipt" style="border: 2px solid #0c2340; border-radius: 8px; padding: 2rem; background: #fff; position: relative;">
+          
+          <!-- Header -->
+          <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #0c2340; padding-bottom: 1rem; margin-bottom: 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <img src="assets/logo/logo-crest.svg" alt="College Crest" style="width: 52px; height: 52px;">
+              <div>
+                <h2 style="font-family: var(--font-serif); font-size: 1.4rem; color: #0c2340; margin: 0; line-height: 1.1;">Agrabad Degree College</h2>
+                <div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Agrabad C/A, Chattogram, Bangladesh</div>
+                <div style="font-size: 0.72rem; color: #d97706; font-weight: 700;">OFFICIAL STUDENT FEE MONEY RECEIPT</div>
+              </div>
+            </div>
+            <div class="text-right">
+              <div style="font-size: 0.8125rem; color: #64748b;">Receipt Ref:</div>
+              <div class="fw-bold text-navy" id="rcpt-ref" style="font-family: var(--font-mono); font-size: 0.95rem;">-</div>
+              <div style="font-size: 0.8125rem; color: #64748b;" id="rcpt-date">-</div>
+            </div>
+          </div>
+
+          <!-- Student Information Row -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.88rem; margin-bottom: 1.5rem; background: #f1f5f9; padding: 0.85rem; border-radius: 6px;">
+            <div><strong>Student Name:</strong> <span id="rcpt-student-name">-</span></div>
+            <div><strong>Student ID:</strong> <span id="rcpt-student-id">-</span></div>
+            <div><strong>Program & Dept:</strong> <span id="rcpt-program">-</span></div>
+            <div><strong>Academic Session:</strong> <span>2025 - 2026</span></div>
+          </div>
+
+          <!-- Fee Line Items Table -->
+          <table class="data-table" style="margin-bottom: 1.5rem; border: 1px solid #e2e8f0;">
+            <thead>
+              <tr style="background: #0c2340; color: #fff;">
+                <th style="color: #fff;">SL</th>
+                <th style="color: #fff;">Particulars / Description</th>
+                <th style="color: #fff; text-align: right;">Amount (BDT)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td id="rcpt-item-desc">-</td>
+                <td class="text-right fw-bold" id="rcpt-item-amount">-</td>
+              </tr>
+              <tr style="background: #f8fafc; font-size: 1rem; border-top: 2px solid #0c2340;">
+                <td colspan="2" class="text-right fw-bold">TOTAL AMOUNT PAID:</td>
+                <td class="text-right fw-bold text-navy" id="rcpt-total-amount">-</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Footer with Signatures & Stamp -->
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed #cbd5e1;">
+            <div>
+              <div style="font-size: 0.75rem; color: #64748b;">Payment Method: <strong id="rcpt-method">-</strong></div>
+              <div style="font-size: 0.75rem; color: #64748b;">Gateway Verification: <strong id="rcpt-gateway-ref">-</strong></div>
+              <div style="font-size: 0.7rem; color: #94a3b8; margin-top: 0.25rem;">This is a computer generated verified receipt. No manual signature required.</div>
+            </div>
+
+            <div class="text-center" style="border: 2px solid #059669; color: #059669; padding: 0.35rem 0.75rem; border-radius: 4px; font-weight: 800; text-transform: uppercase; font-size: 0.8125rem; transform: rotate(-5deg);">
+              PAID & VERIFIED<br>ACCOUNTS ADC
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline modal-close-btn">Close</button>
+        <button type="button" class="btn btn-primary" id="btn-print-receipt-modal">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-printer"></use></svg>
+          Print Money Receipt
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+
+  <script type="module">
+    import { checkPageAccess, initDashboardTopbar } from './js/guards.js';
+    import { PaymentManager } from './js/payments.js';
+    import { initModals } from './js/utilities.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initModals();
+      const user = checkPageAccess(['student']);
+      if (!user) return;
+
+      initDashboardTopbar(user);
+
+      const pm = new PaymentManager();
+      pm.init();
+    });
+  </script>
+</body>
+</html>

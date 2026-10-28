@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="35%" stop-color="#3b82f6"/>
+      <stop offset="70%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="buildingGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fdfbf7"/>
+      <stop offset="60%" stop-color="#f1ece1"/>
+      <stop offset="100%" stop-color="#ded4c0"/>
+    </linearGradient>
+    <linearGradient id="brickTrim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#881337"/>
+      <stop offset="50%" stop-color="#9f1239"/>
+      <stop offset="100%" stop-color="#881337"/>
+    </linearGradient>
+    <linearGradient id="lawnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#15803d"/>
+      <stop offset="40%" stop-color="#16a34a"/>
+      <stop offset="100%" stop-color="#14532d"/>
+    </linearGradient>
+    <linearGradient id="roadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <filter id="softShad">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="600" fill="url(#skyGrad)"/>
+  
+  <!-- Subtle Clouds -->
+  <path d="M 100,120 Q 140,80 190,100 Q 240,70 290,110 Q 320,90 350,120 Z" fill="#ffffff" opacity="0.45"/>
+  <path d="M 850,90 Q 900,60 960,80 Q 1020,50 1080,95 Q 1120,80 1150,110 Z" fill="#ffffff" opacity="0.35"/>
+
+  <!-- Background Trees and Distant Foliage -->
+  <g fill="#166534" opacity="0.7">
+    <ellipse cx="120" cy="380" rx="90" ry="70"/>
+    <ellipse cx="250" cy="390" rx="80" ry="60"/>
+    <ellipse cx="980" cy="380" rx="100" ry="70"/>
+    <ellipse cx="1100" cy="390" rx="85" ry="60"/>
+  </g>
+
+  <!-- College Main Building (Academic Block) -->
+  <g filter="url(#softShad)">
+    <!-- Base / Plinth -->
+    <rect x="220" y="240" width="760" height="220" fill="url(#buildingGrad)" rx="3"/>
+    <!-- Top parapet / cornice -->
+    <rect x="210" y="220" width="780" height="22" fill="#0f2b5c"/>
+    <rect x="215" y="242" width="770" height="8" fill="#d97706"/>
+
+    <!-- Central Grand Entrance Arch & Portico -->
+    <rect x="460" y="190" width="280" height="270" fill="#f8fafc"/>
+    <!-- Arch cornice -->
+    <rect x="445" y="180" width="310" height="22" fill="#0c2340" rx="2"/>
+    <rect x="450" y="202" width="300" height="6" fill="#fbbf24"/>
+    
+    <!-- Big Institution Signboard -->
+    <rect x="475" y="215" width="250" height="36" rx="4" fill="#0f2b5c" stroke="#fbbf24" stroke-width="1.8"/>
+    <text x="600" y="239" font-family="'Cinzel', 'Georgia', serif" font-size="13" font-weight="800" fill="#ffffff" letter-spacing="2.2" text-anchor="middle">AGRABAD DEGREE COLLEGE</text>
+
+    <!-- Main Entrance Double Arches -->
+    <path d="M 500,460 L 500,320 Q 500,280 540,280 Q 580,280 580,320 L 580,460 Z" fill="#0f172a"/>
+    <path d="M 620,460 L 620,320 Q 620,280 660,280 Q 700,280 700,320 L 700,460 Z" fill="#0f172a"/>
+    <!-- Glass reflections in door -->
+    <line x1="510" y1="350" x2="570" y2="440" stroke="#38bdf8" stroke-width="3" opacity="0.4"/>
+    <line x1="630" y1="350" x2="690" y2="440" stroke="#38bdf8" stroke-width="3" opacity="0.4"/>
+
+    <!-- Left Wing Windows Grid (3 floors x 4 columns) -->
+    <!-- Floor 3 -->
+    <rect x="245" y="260" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="300" y="260" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="355" y="260" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="410" y="260" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <!-- Floor 2 -->
+    <rect x="245" y="325" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="300" y="325" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="355" y="325" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="410" y="325" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <!-- Floor 1 -->
+    <rect x="245" y="390" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="300" y="390" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="355" y="390" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="410" y="390" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+
+    <!-- Right Wing Windows Grid (3 floors x 4 columns) -->
+    <!-- Floor 3 -->
+    <rect x="750" y="260" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="805" y="260" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="860" y="260" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="915" y="260" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <!-- Floor 2 -->
+    <rect x="750" y="325" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="805" y="325" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="860" y="325" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="915" y="325" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <!-- Floor 1 -->
+    <rect x="750" y="390" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="805" y="390" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="860" y="390" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+    <rect x="915" y="390" width="40" height="50" rx="2" fill="#0284c7" stroke="#334155" stroke-width="2"/>
+
+    <!-- Red Brick Stripes / Architectural Bands -->
+    <rect x="220" y="315" width="240" height="6" fill="url(#brickTrim)"/>
+    <rect x="220" y="380" width="240" height="6" fill="url(#brickTrim)"/>
+    <rect x="740" y="315" width="240" height="6" fill="url(#brickTrim)"/>
+    <rect x="740" y="380" width="240" height="6" fill="url(#brickTrim)"/>
+
+    <!-- Flagpole on top of building with Bangladesh Flag -->
+    <line x1="600" y1="180" x2="600" y2="105" stroke="#94a3b8" stroke-width="4"/>
+    <rect x="600" y="105" width="46" height="28" fill="#006a4e" rx="1"/>
+    <circle cx="620" cy="119" r="9" fill="#f42a41"/>
+  </g>
+
+  <!-- Foreground Trees & Garden Lawn -->
+  <!-- Left Garden Tree -->
+  <g>
+    <path d="M 140,460 L 160,370 L 175,460 Z" fill="#78350f"/>
+    <circle cx="160" cy="350" r="55" fill="#15803d"/>
+    <circle cx="130" cy="370" r="45" fill="#16a34a"/>
+    <circle cx="190" cy="365" r="48" fill="#166534"/>
+  </g>
+
+  <!-- Right Garden Tree -->
+  <g>
+    <path d="M 1030,460 L 1045,370 L 1060,460 Z" fill="#78350f"/>
+    <circle cx="1045" cy="350" r="55" fill="#15803d"/>
+    <circle cx="1015" cy="370" r="45" fill="#16a34a"/>
+    <circle cx="1075" cy="365" r="48" fill="#166534"/>
+  </g>
+
+  <!-- Ground Lawn & Walkway -->
+  <path d="M 0,460 L 1200,460 L 1200,600 L 0,600 Z" fill="url(#lawnGrad)"/>
+  
+  <!-- Modern Paved Courtyard Path -->
+  <polygon points="440,460 760,460 880,600 320,600" fill="url(#roadGrad)"/>
+  <!-- Courtyard paver grid pattern -->
+  <line x1="480" y1="460" x2="380" y2="600" stroke="#f1f5f9" stroke-width="2" opacity="0.6"/>
+  <line x1="720" y1="460" x2="820" y2="600" stroke="#f1f5f9" stroke-width="2" opacity="0.6"/>
+  <line x1="600" y1="460" x2="600" y2="600" stroke="#f1f5f9" stroke-width="2" opacity="0.6"/>
+  <line x1="390" y1="510" x2="810" y2="510" stroke="#f1f5f9" stroke-width="2" opacity="0.5"/>
+  <line x1="350" y1="555" x2="850" y2="555" stroke="#f1f5f9" stroke-width="2" opacity="0.5"/>
+
+  <!-- Flower beds on sides -->
+  <ellipse cx="360" cy="475" rx="60" ry="12" fill="#047857"/>
+  <circle cx="330" cy="473" r="4" fill="#fbbf24"/>
+  <circle cx="350" cy="472" r="4" fill="#f43f5e"/>
+  <circle cx="370" cy="474" r="4" fill="#fbbf24"/>
+  <circle cx="390" cy="472" r="4" fill="#f43f5e"/>
+
+  <ellipse cx="840" cy="475" rx="60" ry="12" fill="#047857"/>
+  <circle cx="810" cy="473" r="4" fill="#fbbf24"/>
+  <circle cx="830" cy="472" r="4" fill="#f43f5e"/>
+  <circle cx="850" cy="474" r="4" fill="#fbbf24"/>
+  <circle cx="870" cy="472" r="4" fill="#f43f5e"/>
+</svg>

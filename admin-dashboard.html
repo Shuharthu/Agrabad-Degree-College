@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | Agrabad Degree College</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    
+    <!-- Admin Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <img src="assets/logo/logo-crest.svg" alt="Agrabad Crest" class="sidebar-crest">
+        <div>
+          <div class="sidebar-brand-name">Agrabad Admin</div>
+          <div class="sidebar-brand-sub">Controller Panel</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#section-metrics" class="sidebar-link active nav-anchor">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-dashboard"></use></svg>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="#section-students" class="sidebar-link nav-anchor">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-users"></use></svg>
+          <span>Students</span>
+        </a>
+
+        <a href="#section-admissions" class="sidebar-link nav-anchor">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-file-text"></use></svg>
+          <span>Admissions</span>
+          <span class="badge-counter" id="admin-pending-badge">14</span>
+        </a>
+
+        <a href="#section-teachers" class="sidebar-link nav-anchor">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-graduation"></use></svg>
+          <span>Teachers</span>
+        </a>
+
+        <a href="#section-finance" class="sidebar-link nav-anchor">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-wallet"></use></svg>
+          <span>Fees & Ledger</span>
+        </a>
+
+        <a href="#section-notices" class="sidebar-link nav-anchor">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-megaphone"></use></svg>
+          <span>Notices</span>
+        </a>
+
+        <a href="#section-audit" class="sidebar-link nav-anchor">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-shield-check"></use></svg>
+          <span>Audit Logs</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="sidebar-logout-btn">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-logout"></use></svg>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main">
+      
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" aria-label="Toggle sidebar">
+            <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-menu"></use></svg>
+          </button>
+          <div class="topbar-greeting">
+            <h2>Institutional Administration Console</h2>
+            <p>Agrabad Degree College Management Information System (ADC-MIS)</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="topbar-user-profile">
+            <div class="topbar-avatar" style="background: #fef3c7; color: #b45309; border-color: #d97706;">AD</div>
+            <div class="topbar-user-info">
+              <span class="topbar-user-name user-display-name">Principal Office</span>
+              <span class="topbar-user-role user-role-badge">Administrator</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        
+        <!-- KPI METRICS SECTION -->
+        <div id="section-metrics" style="margin-bottom: 2rem;">
+          <div class="stats-grid">
+            
+            <div class="stat-card">
+              <div class="stat-icon-wrap blue">
+                <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-users"></use></svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-label">Total Registered Students</span>
+                <span class="stat-value" id="metric-total-students">1,248</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap purple">
+                <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-file-text"></use></svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-label">New Applications</span>
+                <span class="stat-value" id="metric-new-apps">86</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap amber">
+                <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-clock"></use></svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-label">Awaiting Review</span>
+                <span class="stat-value" id="metric-pending-apps">14</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap green">
+                <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-graduation"></use></svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-label">Active Faculty</span>
+                <span class="stat-value" id="metric-teachers">42</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap green">
+                <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-wallet"></use></svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-label">Fees Collected</span>
+                <span class="stat-value" id="metric-collected-fees">৳ 3,450,000</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap rose">
+                <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-credit-card"></use></svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-label">Outstanding Fees</span>
+                <span class="stat-value" id="metric-outstanding-fees">৳ 420,000</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- MODULE 1: STUDENT MANAGEMENT (Matches Screenshot 7) -->
+        <div id="section-students" style="margin-bottom: 2.5rem;">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Manage Students</h3>
+                <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">View, filter, archive, or add new college students</p>
+              </div>
+
+              <div class="d-flex gap-2">
+                <button type="button" class="btn btn-primary btn-sm" id="btn-open-add-student">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-plus"></use></svg>
+                  Add Student
+                </button>
+              </div>
+            </div>
+
+            <!-- Table Filter Toolbar -->
+            <div style="padding: 1rem 1.5rem; background: var(--color-slate-50); border-bottom: 1px solid var(--color-slate-200); display: flex; gap: 1rem; align-items: center;">
+              <div style="flex: 1; max-width: 380px; position: relative;">
+                <input type="text" id="search-students-input" class="form-control" placeholder="Search by name, ID, or course...">
+              </div>
+              <span class="text-muted" style="font-size: 0.8125rem;">Showing active students from Cloud Firestore database</span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Student ID</th>
+                    <th>Full Name & Email</th>
+                    <th>Program & Department</th>
+                    <th>Session</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-students-tbody">
+                  <!-- Populated via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 2: ADMISSION MANAGEMENT -->
+        <div id="section-admissions" style="margin-bottom: 2.5rem;">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Admission Applications Queue</h3>
+                <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Evaluate prospective applicants, verify SSC transcripts, and approve enrollment</p>
+              </div>
+              <button onclick="window.print()" class="btn btn-outline btn-sm">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-download"></use></svg>
+                Export Merit List
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Ref Number</th>
+                    <th>Applicant Details</th>
+                    <th>Program / Group</th>
+                    <th>SSC Record</th>
+                    <th>Status</th>
+                    <th>Review Action</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-admissions-tbody">
+                  <!-- Populated via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 3: FINANCE & PAYMENT AUDITING -->
+        <div id="section-finance" style="margin-bottom: 2.5rem;">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Financial Transaction Audit Ledger</h3>
+                <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Verified bKash, Nagad, Card, and Bank deposits with gateway reconciliation</p>
+              </div>
+              <span class="badge badge-paid">SSLCommerz Verified</span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Txn Reference</th>
+                    <th>Student Name & ID</th>
+                    <th>Fee Description</th>
+                    <th>Amount</th>
+                    <th>Method</th>
+                    <th>Paid At</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-finance-tbody">
+                  <!-- Populated via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 4: NOTICE PUBLISHER & AUDIT LOGS -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+          
+          <!-- Notice Publisher -->
+          <div class="card" id="section-notices">
+            <div class="card-header">
+              <h3 class="card-title">Publish Official Circular</h3>
+            </div>
+            <div class="card-body">
+              <form id="form-publish-notice">
+                <div class="form-group">
+                  <label class="form-label" for="notice-pub-title">Notice Title <span class="required">*</span></label>
+                  <input type="text" id="notice-pub-title" class="form-control" placeholder="e.g. Midterm Examination Routine Announced" required>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="notice-pub-cat">Category</label>
+                    <select id="notice-pub-cat" class="form-control">
+                      <option value="Academic">Academic</option>
+                      <option value="Examinations">Examinations</option>
+                      <option value="Admission">Admission</option>
+                      <option value="Holidays">Holidays</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="notice-pub-priority">Priority</label>
+                    <select id="notice-pub-priority" class="form-control">
+                      <option value="normal">Normal</option>
+                      <option value="high">High</option>
+                      <option value="urgent">Urgent</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="notice-pub-body">Notice Content <span class="required">*</span></label>
+                  <textarea id="notice-pub-body" class="form-control" rows="3" placeholder="Enter detailed notice message..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-navy btn-block">Publish Notice</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Security Audit Logs -->
+          <div class="card" id="section-audit">
+            <div class="card-header">
+              <h3 class="card-title">Security & Action Audit Logs</h3>
+              <span class="badge badge-draft">Tamper-Proof</span>
+            </div>
+            <div class="table-responsive" style="max-height: 380px;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Timestamp</th>
+                    <th>Actor</th>
+                    <th>Action</th>
+                    <th>Target Record</th>
+                    <th>IP</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-audit-tbody">
+                  <!-- Populated via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Modal: Add New Student -->
+  <div class="modal-backdrop" id="modal-add-student">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Add New Student Account</h3>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <form id="form-add-student">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="new-std-name">Student Full Name <span class="required">*</span></label>
+            <input type="text" id="new-std-name" class="form-control" placeholder="e.g. Mohammad Asif" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="new-std-email">Email Address <span class="required">*</span></label>
+              <input type="email" id="new-std-email" class="form-control" placeholder="asif@example.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="new-std-mobile">Mobile Number <span class="required">*</span></label>
+              <input type="tel" id="new-std-mobile" class="form-control" placeholder="018XXXXXXXX" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="new-std-program">Academic Program</label>
+              <select id="new-std-program" class="form-control">
+                <option value="Higher Secondary (HSC)">Higher Secondary (HSC)</option>
+                <option value="Degree (Pass Course)">Degree (Pass Course)</option>
+                <option value="Honours">Honours</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="new-std-dept">Department / Discipline</label>
+              <select id="new-std-dept" class="form-control">
+                <option value="Science">Science</option>
+                <option value="Business Studies">Business Studies</option>
+                <option value="Humanities">Humanities</option>
+                <option value="Mathematics">Mathematics</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Create Student Record</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Review Admission Application -->
+  <div class="modal-backdrop" id="modal-review-admission">
+    <div class="modal-dialog modal-dialog-lg">
+      <div class="modal-header">
+        <div class="d-flex align-center gap-2">
+          <h3 class="modal-title">Review Admission Application:</h3>
+          <span class="badge badge-review" id="rev-modal-ref" style="font-family: var(--font-mono); font-size: 0.9rem;">-</span>
+        </div>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div style="background: var(--color-slate-50); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.88rem;">
+            <div><strong>Applicant Name:</strong> <span id="rev-modal-name">-</span></div>
+            <div><strong>Program:</strong> <span id="rev-modal-program">-</span></div>
+            <div><strong>Mobile:</strong> <span id="rev-modal-mobile">-</span></div>
+            <div><strong>Academic Record:</strong> <span id="rev-modal-ssc">-</span></div>
+            <div style="grid-column: span 2;"><strong>Address:</strong> <span id="rev-modal-address">-</span></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="rev-modal-status-select">Update Application Status</label>
+          <select id="rev-modal-status-select" class="form-control" style="font-weight: 700;">
+            <option value="Under Review">Under Review</option>
+            <option value="Shortlisted">Shortlisted</option>
+            <option value="Documents Required">Documents Required</option>
+            <option value="Approved">Approved (Grant Enrollment)</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+          <div class="form-hint">Approving will automatically generate an active student profile with unique Student ID.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="rev-modal-remarks">Committee Decision Remarks</label>
+          <textarea id="rev-modal-remarks" class="form-control" rows="2" placeholder="Remarks visible to applicant on tracking portal..."></textarea>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline modal-close-btn">Cancel</button>
+        <button type="button" class="btn btn-success" id="btn-save-admission-decision">Save Decision</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { checkPageAccess, initDashboardTopbar } from './js/guards.js';
+    import { AdminController } from './js/admin.js';
+    import { initModals } from './js/utilities.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initModals();
+      const user = checkPageAccess(['admin']);
+      if (!user) return;
+
+      initDashboardTopbar(user);
+
+      const ctrl = new AdminController();
+      ctrl.init();
+    });
+  </script>
+</body>
+</html>

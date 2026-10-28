@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile | Agrabad Degree College</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <img src="assets/logo/logo-crest.svg" alt="Agrabad Crest" class="sidebar-crest">
+        <div>
+          <div class="sidebar-brand-name">Agrabad</div>
+          <div class="sidebar-brand-sub">Degree College</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="student-dashboard.html" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-dashboard"></use></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="profile.html" class="sidebar-link active">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-user"></use></svg>
+          <span>Profile</span>
+        </a>
+        <a href="student-dashboard.html#section-courses" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-book"></use></svg>
+          <span>My Courses</span>
+        </a>
+        <a href="student-dashboard.html#section-routine" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-calendar"></use></svg>
+          <span>Routine</span>
+        </a>
+        <a href="student-dashboard.html#section-attendance" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-check-circle"></use></svg>
+          <span>Attendance</span>
+        </a>
+        <a href="student-dashboard.html#section-results" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-award"></use></svg>
+          <span>Exam Results</span>
+        </a>
+        <a href="notices.html" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-bell"></use></svg>
+          <span>Notices</span>
+        </a>
+        <a href="payments.html" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-wallet"></use></svg>
+          <span>Payments</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="sidebar-logout-btn">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-logout"></use></svg>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" aria-label="Toggle sidebar">
+            <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-menu"></use></svg>
+          </button>
+          <div class="topbar-greeting">
+            <h2>Student Profile</h2>
+            <p>View and manage your institutional personal and academic credentials.</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="topbar-user-profile">
+            <div class="topbar-avatar">SB</div>
+            <div class="topbar-user-info">
+              <span class="topbar-user-name user-display-name">Shuvo Barua</span>
+              <span class="topbar-user-role user-role-badge">Student</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content" style="max-width: 900px;">
+        
+        <!-- Profile Header Card matching Screenshot 5 -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <div class="card-body">
+            <div class="d-flex justify-between align-center" style="flex-wrap: wrap; gap: 1.5rem;">
+              
+              <div class="d-flex align-center gap-3">
+                <div style="width: 84px; height: 84px; border-radius: 50%; background: var(--color-blue-subtle); border: 3px solid var(--color-blue-primary); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--color-blue-primary); font-weight: 700;">
+                  SB
+                </div>
+                <div>
+                  <h2 style="font-size: 1.6rem; color: var(--color-navy); margin-bottom: 0.2rem;" id="prof-header-name">Shuvo Barua</h2>
+                  <div class="text-muted" style="font-size: 0.85rem; margin-bottom: 0.35rem;">
+                    Student ID: <strong id="prof-header-id" class="text-navy">ADC2025001</strong>
+                  </div>
+                  <div class="d-flex gap-2 align-center">
+                    <span class="badge badge-paid" id="prof-header-dept">Science</span>
+                    <span class="badge badge-review" id="prof-header-session">Session: 2025 - 2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-primary" id="btn-edit-profile-trigger">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-edit"></use></svg>
+                Edit Profile
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Tabs matching Screenshot 5: Personal Info, Academic Info, Contact Info -->
+        <div class="card">
+          <div class="card-header" style="padding: 0 1.5rem;">
+            <div class="tab-group" style="border: none;">
+              <button type="button" class="tab-btn active prof-tab-btn" data-target="tab-personal">Personal Info</button>
+              <button type="button" class="tab-btn prof-tab-btn" data-target="tab-academic">Academic Info</button>
+              <button type="button" class="tab-btn prof-tab-btn" data-target="tab-contact">Contact & Security</button>
+            </div>
+          </div>
+
+          <div class="card-body">
+            
+            <!-- TAB 1: PERSONAL INFO -->
+            <div class="tab-content active" id="tab-personal">
+              <table class="data-table">
+                <tbody>
+                  <tr>
+                    <td style="width: 35%;" class="fw-semibold text-muted">Full Name</td>
+                    <td class="fw-bold text-navy" id="prof-name">Shuvo Barua</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold text-muted">Date of Birth</td>
+                    <td id="prof-dob">12 Jan 2005</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold text-muted">Gender</td>
+                    <td id="prof-gender">Male</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold text-muted">Email</td>
+                    <td id="prof-email">student@agrabadcollege.edu.bd</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold text-muted">Mobile</td>
+                    <td id="prof-mobile">01812-345678</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold text-muted">Address</td>
+                    <td id="prof-address">Agrabad C/A, Chattogram, Bangladesh</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- TAB 2: ACADEMIC INFO -->
+            <div class="tab-content" id="tab-academic">
+              <table class="data-table">
+                <tbody>
+                  <tr>
+                    <td style="width: 35%;" class="fw-semibold text-muted">Academic Program</td>
+                    <td class="fw-bold text-navy" id="prof-program">Higher Secondary (HSC)</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold text-muted">Department / Group</td>
+                    <td id="prof-dept">Science</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold text-muted">Academic Session</td>
+                    <td id="prof-session">2025 - 2026</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold text-muted">Current Semester / Year</td>
+                    <td>1st Year</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold text-muted">SSC Examination Board</td>
+                    <td id="prof-ssc-board">Chattogram</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold text-muted">SSC GPA</td>
+                    <td class="fw-bold text-success" id="prof-ssc-gpa">5.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- TAB 3: CONTACT & SECURITY -->
+            <div class="tab-content" id="tab-contact">
+              <div class="form-group">
+                <label class="form-label">Guardian Name</label>
+                <div class="fw-semibold text-navy" id="prof-guardian-name">Sunil Barua</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Guardian Mobile</label>
+                <div class="fw-semibold text-navy" id="prof-guardian-mobile">01819-876543</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Permanent Residence</label>
+                <div class="text-muted" id="prof-perm-address">Raozan, Chattogram, Bangladesh</div>
+              </div>
+              <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--color-slate-200);">
+              <h4 style="font-size: 1rem; color: var(--color-navy); margin-bottom: 0.75rem;">Change Password</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Current Password">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="New Password">
+                </div>
+              </div>
+              <button type="button" class="btn btn-outline-primary btn-sm" onclick="alert('Password updated successfully.')">Update Password</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script type="module">
+    import { checkPageAccess, initDashboardTopbar } from './js/guards.js';
+    import { mockDb } from './js/mock-backend.js';
+    import { formatDate } from './js/utilities.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = checkPageAccess(['student']);
+      if (!user) return;
+
+      initDashboardTopbar(user);
+
+      // Load student data
+      const profiles = mockDb.getCollection('studentProfiles');
+      const student = profiles.find(s => s.userId === user.uid || s.email === user.email) || profiles[0];
+
+      document.getElementById('prof-header-name').textContent = student.fullName;
+      document.getElementById('prof-header-id').textContent = student.studentId;
+      document.getElementById('prof-header-dept').textContent = student.department;
+      document.getElementById('prof-header-session').textContent = `Session: ${student.session}`;
+
+      document.getElementById('prof-name').textContent = student.fullName;
+      document.getElementById('prof-dob').textContent = formatDate(student.dateOfBirth);
+      document.getElementById('prof-gender').textContent = student.gender || 'Male';
+      document.getElementById('prof-email').textContent = student.email;
+      document.getElementById('prof-mobile').textContent = student.mobile;
+      document.getElementById('prof-address').textContent = student.presentAddress;
+
+      document.getElementById('prof-program').textContent = student.program;
+      document.getElementById('prof-dept').textContent = student.department;
+      document.getElementById('prof-session').textContent = student.session;
+      document.getElementById('prof-ssc-board').textContent = student.sscBoard || 'Chattogram';
+      document.getElementById('prof-ssc-gpa').textContent = student.sscGpa || '5.00';
+
+      document.getElementById('prof-guardian-name').textContent = student.guardianName || 'Guardian';
+      document.getElementById('prof-guardian-mobile').textContent = student.guardianMobile || student.mobile;
+      document.getElementById('prof-perm-address').textContent = student.permanentAddress || student.presentAddress;
+
+      // Tab switcher
+      const tabBtns = document.querySelectorAll('.prof-tab-btn');
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+          btn.classList.add('active');
+          const target = btn.getAttribute('data-target');
+          document.getElementById(target).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

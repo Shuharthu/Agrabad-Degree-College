@@ -1,0 +1,19 @@
+# Environment files containing secrets
+.env
+.env.local
+.env.*.local
+
+# Node modules & dependencies
+node_modules/
+functions/node_modules/
+package-lock.json
+
+# Firebase caches & logs
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Operating system files
+.DS_Store
+Thumbs.db

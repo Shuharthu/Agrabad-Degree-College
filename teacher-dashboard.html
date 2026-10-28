@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty Portal | Agrabad Degree College</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <img src="assets/logo/logo-crest.svg" alt="Agrabad Crest" class="sidebar-crest">
+        <div>
+          <div class="sidebar-brand-name">Agrabad Faculty</div>
+          <div class="sidebar-brand-sub">Teacher Portal</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#section-assigned" class="sidebar-link active">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-book"></use></svg>
+          <span>Assigned Courses</span>
+        </a>
+
+        <a href="#section-attendance" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-check-circle"></use></svg>
+          <span>Attendance Register</span>
+        </a>
+
+        <a href="#section-marks" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-award"></use></svg>
+          <span>Marks Entry</span>
+        </a>
+
+        <a href="notices.html" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-bell"></use></svg>
+          <span>College Notices</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="sidebar-logout-btn">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-logout"></use></svg>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main">
+      
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" aria-label="Toggle sidebar">
+            <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-menu"></use></svg>
+          </button>
+          <div class="topbar-greeting">
+            <h2>Faculty Academic Workspace</h2>
+            <p>Welcome back, <span id="teacher-profile-name">Prof. Rafiqul Islam</span></p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="topbar-user-profile">
+            <div class="topbar-avatar" style="background: #dcfce7; color: #15803d; border-color: #16a34a;">RI</div>
+            <div class="topbar-user-info">
+              <span class="topbar-user-name user-display-name">Prof. Rafiqul Islam</span>
+              <span class="topbar-user-role" id="teacher-profile-desig">Senior Lecturer</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        
+        <!-- Assigned Courses Header -->
+        <div id="section-assigned" style="margin-bottom: 2.5rem;">
+          <div class="d-flex justify-between align-center" style="margin-bottom: 1rem;">
+            <div>
+              <h3 style="font-size: 1.25rem; color: var(--color-navy);">My Assigned Classes & Sections</h3>
+              <p class="text-muted" style="font-size: 0.8125rem; margin: 0;" id="teacher-profile-dept">Department of Computer Science & Mathematics</p>
+            </div>
+            <span class="badge badge-paid">Semester Active</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;" id="teacher-courses-grid">
+            <!-- Populated via teachers.js -->
+          </div>
+        </div>
+
+        <!-- Attendance Marking Register -->
+        <div id="section-attendance" style="margin-bottom: 2.5rem;">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Class Attendance Register</h3>
+                <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Record daily student roll attendance for assigned sections</p>
+              </div>
+
+              <div class="d-flex gap-2">
+                <button type="button" class="btn btn-primary btn-sm" id="btn-save-attendance">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-check-circle"></use></svg>
+                  Save Attendance
+                </button>
+              </div>
+            </div>
+
+            <!-- Selector Toolbar -->
+            <div style="padding: 1rem 1.5rem; background: var(--color-slate-50); border-bottom: 1px solid var(--color-slate-200); display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+              <div>
+                <label class="form-label" style="margin-bottom: 0.2rem; font-size: 0.75rem;">Select Course:</label>
+                <select id="att-select-course" class="form-control" style="width: 240px; padding: 0.35rem 0.75rem; font-size: 0.85rem;">
+                  <option value="MATH-101">MATH-101: Higher Mathematics I</option>
+                  <option value="ICT-102">ICT-102: Info & Comm. Technology</option>
+                  <option value="CSE-201">CSE-201: Discrete Mathematics</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="form-label" style="margin-bottom: 0.2rem; font-size: 0.75rem;">Attendance Date:</label>
+                <input type="date" id="att-select-date" class="form-control" style="width: 170px; padding: 0.35rem 0.75rem; font-size: 0.85rem;" value="2025-10-27">
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>SL</th>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Status Marking</th>
+                  </tr>
+                </thead>
+                <tbody id="attendance-roster-tbody">
+                  <!-- Populated via teachers.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Examination Marks Entry -->
+        <div id="section-marks" style="margin-bottom: 2.5rem;">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Semester Examination Marks Entry</h3>
+                <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Continuous Assessment (30) + Final Term (70) = Grade & GPA</p>
+              </div>
+
+              <button type="button" class="btn btn-navy btn-sm" id="btn-submit-marks">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-award"></use></svg>
+                Submit Grades
+              </button>
+            </div>
+
+            <!-- Toolbar -->
+            <div style="padding: 1rem 1.5rem; background: var(--color-slate-50); border-bottom: 1px solid var(--color-slate-200); display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+              <div>
+                <label class="form-label" style="margin-bottom: 0.2rem; font-size: 0.75rem;">Subject:</label>
+                <select id="marks-select-course" class="form-control" style="width: 240px; padding: 0.35rem 0.75rem; font-size: 0.85rem;">
+                  <option value="MATH-101">MATH-101: Higher Mathematics I</option>
+                  <option value="ICT-102">ICT-102: Info & Comm. Technology</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="form-label" style="margin-bottom: 0.2rem; font-size: 0.75rem;">Semester Exam:</label>
+                <select id="marks-select-exam" class="form-control" style="width: 200px; padding: 0.35rem 0.75rem; font-size: 0.85rem;">
+                  <option value="1st Semester Final Exam">1st Semester Final Exam</option>
+                  <option value="Midterm Assessment">Midterm Assessment</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Student ID</th>
+                    <th>Student Full Name</th>
+                    <th>CA Marks (30)</th>
+                    <th>Final Exam (70)</th>
+                    <th>Total (100)</th>
+                    <th>Grade</th>
+                  </tr>
+                </thead>
+                <tbody id="marks-entry-tbody">
+                  <!-- Populated via teachers.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script type="module">
+    import { checkPageAccess, initDashboardTopbar } from './js/guards.js';
+    import { TeacherPortal } from './js/teachers.js';
+    import { initModals } from './js/utilities.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initModals();
+      const user = checkPageAccess(['teacher']);
+      if (!user) return;
+
+      initDashboardTopbar(user);
+
+      const portal = new TeacherPortal();
+      portal.init();
+    });
+  </script>
+</body>
+</html>

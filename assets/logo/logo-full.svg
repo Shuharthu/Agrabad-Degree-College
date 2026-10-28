@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="crestNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f2b5c"/>
+      <stop offset="100%" stop-color="#071733"/>
+    </linearGradient>
+    <linearGradient id="crestGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="60%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0c2340" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(200, 160)" text-anchor="middle" filter="url(#subtleShadow)">
+    <!-- Laurel Wreath Left -->
+    <g fill="#0f2b5c">
+      <!-- Left Leaves -->
+      <path d="M -75,40 C -90,15 -95,-20 -82,-65 C -78,-50 -68,-30 -58,-15 C -70,5 -73,25 -75,40 Z"/>
+      <path d="M -82,-20 C -96,-35 -100,-65 -90,-95 C -84,-80 -70,-65 -60,-50 C -72,-35 -78,-25 -82,-20 Z"/>
+      <path d="M -70,-70 C -82,-90 -82,-120 -65,-140 C -60,-125 -50,-105 -38,-95 C -52,-85 -62,-75 -70,-70 Z"/>
+      <path d="M -45,-115 C -55,-135 -48,-160 -30,-175 C -28,-158 -22,-140 -12,-130 C -25,-125 -38,-120 -45,-115 Z"/>
+      <!-- Inner accent leaves left -->
+      <path d="M -60,10 C -72,-5 -74,-25 -65,-45 C -58,-32 -52,-20 -46,-10 C -52,0 -56,5 -60,10 Z" fill="#1a56db" opacity="0.85"/>
+      <path d="M -62,-40 C -72,-55 -70,-75 -58,-92 C -52,-78 -46,-65 -38,-55 C -46,-48 -55,-44 -62,-40 Z" fill="#1a56db" opacity="0.85"/>
+      
+      <!-- Right Leaves (Symmetric) -->
+      <path d="M 75,40 C 90,15 95,-20 82,-65 C 78,-50 68,-30 58,-15 C 70,5 73,25 75,40 Z"/>
+      <path d="M 82,-20 C 96,-35 100,-65 90,-95 C 84,-80 70,-65 60,-50 C 72,-35 78,-25 82,-20 Z"/>
+      <path d="M 70,-70 C 82,-90 82,-120 65,-140 C 60,-125 50,-105 38,-95 C 52,-85 62,-75 70,-70 Z"/>
+      <path d="M 45,-115 C 55,-135 48,-160 30,-175 C 28,-158 22,-140 12,-130 C 25,-125 38,-120 45,-115 Z"/>
+      <!-- Inner accent leaves right -->
+      <path d="M 60,10 C 72,-5 74,-25 65,-45 C 58,-32 52,-20 46,-10 C 52,0 56,5 60,10 Z" fill="#1a56db" opacity="0.85"/>
+      <path d="M 62,-40 C 72,-55 70,-75 58,-92 C 52,-78 46,-65 38,-55 C 46,-48 55,-44 62,-40 Z" fill="#1a56db" opacity="0.85"/>
+    </g>
+
+    <!-- Torch of Knowledge & Flame (Behind Book) -->
+    <!-- Flame -->
+    <path d="M 0,-130 C -12,-115 -14,-95 -4,-80 C -2,-70 2,-70 4,-80 C 14,-95 12,-115 0,-130 Z" fill="url(#flameGrad)"/>
+    <path d="M 0,-122 C -6,-110 -7,-98 0,-86 C 7,-98 6,-110 0,-122 Z" fill="#fef08a"/>
+    <!-- Torch Handle / Bowl -->
+    <path d="M -16,-78 L 16,-78 L 10,-60 L -10,-60 Z" fill="url(#crestGold)"/>
+    <path d="M -8,-60 L 8,-60 L 5,-15 L -5,-15 Z" fill="#0f2b5c"/>
+    <rect x="-10" y="-62" width="20" height="4" rx="2" fill="url(#crestGold)"/>
+
+    <!-- Graduation Cap / Mortarboard (Top of Crest) -->
+    <g transform="translate(0, -95)">
+      <!-- Cap Rhombus Diamond -->
+      <polygon points="0,-28 65,0 0,28 -65,0" fill="#0c2340"/>
+      <!-- Highlight edge -->
+      <polygon points="0,-28 65,0 0,24 -61,-2" fill="#163e7a"/>
+      <polygon points="0,-28 0,24 -65,0" fill="#0a1d3b"/>
+      <!-- Skull cap underneath -->
+      <path d="M -30,6 C -30,22 30,22 30,6 Z" fill="#071733"/>
+      <!-- Gold Button at Top Center -->
+      <ellipse cx="0" cy="0" rx="4.5" ry="3.5" fill="url(#crestGold)"/>
+      <!-- Tassel Hanging to the Left -->
+      <path d="M 0,0 Q -38,10 -46,38" fill="none" stroke="url(#crestGold)" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="-48,36 -42,39 -44,52 -50,50" fill="url(#crestGold)"/>
+    </g>
+
+    <!-- Open Book (Center) -->
+    <g transform="translate(0, 15)">
+      <!-- Book spine shadow / base -->
+      <path d="M -56,22 C -28,26 -6,14 0,8 C 6,14 28,26 56,22 L 56,-24 C 28,-20 6,-32 0,-36 C -6,-32 -28,-20 -56,-24 Z" fill="#091d3d"/>
+      <!-- Left Page Surface -->
+      <path d="M -53,17 C -27,21 -6,9 0,4 L 0,-33 C -6,-28 -27,-16 -53,-20 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+      <!-- Right Page Surface -->
+      <path d="M 53,17 C 27,21 6,9 0,4 L 0,-33 C 6,-28 27,-16 53,-20 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+      <!-- Page thickness lines -->
+      <path d="M -54,20 C -28,24 -7,12 -1,7" fill="none" stroke="#0f2b5c" stroke-width="1.5"/>
+      <path d="M 54,20 C 28,24 7,12 1,7" fill="none" stroke="#0f2b5c" stroke-width="1.5"/>
+
+      <!-- Text Lines on Pages -->
+      <g stroke="#1a56db" stroke-width="2" stroke-linecap="round" opacity="0.75">
+        <!-- Left Page lines -->
+        <line x1="-42" y1="-10" x2="-10" y2="-4"/>
+        <line x1="-42" y1="-2" x2="-10" y2="4"/>
+        <line x1="-42" y1="6" x2="-14" y2="12"/>
+        <!-- Right Page lines -->
+        <line x1="10" y1="-4" x2="42" y2="-10"/>
+        <line x1="10" y1="4" x2="42" y2="-2"/>
+        <line x1="14" y1="12" x2="42" y2="6"/>
+      </g>
+    </g>
+
+    <!-- EST. 1995 Banner Ribbon -->
+    <g transform="translate(0, 72)">
+      <!-- Ribbon Back Folds -->
+      <polygon points="-78,-4 -90,6 -74,16" fill="#071733"/>
+      <polygon points="78,-4 90,6 74,16" fill="#071733"/>
+      <!-- Ribbon Ends -->
+      <polygon points="-86,-10 -64,-10 -64,18 -86,18 -80,4" fill="#0a1e3f"/>
+      <polygon points="86,-10 64,-10 64,18 86,18 80,4" fill="#0a1e3f"/>
+      <!-- Ribbon Front Banner -->
+      <rect x="-68" y="-12" width="136" height="26" rx="4" fill="url(#crestNavy)" stroke="url(#crestGold)" stroke-width="1.8"/>
+      <text x="0" y="5" font-family="'Cinzel', 'Trajan Pro', 'Georgia', serif" font-size="12" font-weight="700" fill="#fbbf24" letter-spacing="2.5">EST. 1995</text>
+    </g>
+  </g>
+
+  <!-- Wordmark Section -->
+  <g transform="translate(200, 310)" text-anchor="middle">
+    <!-- Main College Name -->
+    <text x="0" y="32" font-family="'Cinzel', 'Playfair Display', 'Merriweather', 'Georgia', serif" font-size="36" font-weight="800" fill="#0c2340" letter-spacing="1">Agrabad</text>
+    <text x="0" y="70" font-family="'Cinzel', 'Playfair Display', 'Merriweather', 'Georgia', serif" font-size="28" font-weight="700" fill="#163e7a" letter-spacing="1.5">Degree College</text>
+    
+    <!-- Tagline: LEARN • GROW • BUILD YOUR FUTURE -->
+    <text x="0" y="105" font-family="'Montserrat', 'Inter', -apple-system, sans-serif" font-size="11.5" font-weight="700" fill="#64748b" letter-spacing="3.5">
+      LEARN <tspan fill="#d97706">•</tspan> GROW <tspan fill="#d97706">•</tspan> BUILD YOUR FUTURE
+    </text>
+
+    <!-- Decorative Accent Bar -->
+    <rect x="-40" y="120" width="80" height="2.5" rx="1.25" fill="url(#crestGold)"/>
+  </g>
+</svg>

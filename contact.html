@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Agrabad Degree College</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-notice-bar">
+    <div class="top-notice-container">
+      <div class="top-notice-left">
+        <span class="top-notice-tag">Notice</span>
+        <div class="top-notice-ticker">
+          ★ Contact office open Sunday through Thursday, 9:00 AM – 4:00 PM for admissions and inquiries.
+        </div>
+      </div>
+      <div class="top-notice-right">
+        <a href="tel:+88031714520" class="top-notice-link">+880 31 714520</a>
+        <a href="admission-status.html" class="top-notice-link" style="color: var(--color-gold-bright);">Track Application</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header-main">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo/logo-crest.svg" alt="Agrabad Degree College Crest" class="brand-crest">
+        <div class="brand-texts">
+          <span class="brand-name">Agrabad Degree College</span>
+          <span class="brand-subtext">Contact & Campus Location</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="programs.html" class="nav-link">Courses & Programs</a>
+        <a href="admissions.html" class="nav-link">Admission</a>
+        <a href="notices.html" class="nav-link">Notice Board</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Portal Login</a>
+        <a href="admissions.html" class="btn btn-primary btn-sm">Apply Now</a>
+      </div>
+
+      <button class="mobile-toggle-btn" aria-label="Toggle navigation menu">
+        <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-menu"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb-nav" style="margin-bottom: 0.5rem;">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span style="color: #fff;">Contact Us</span>
+      </div>
+      <h1 class="page-hero-title">Contact & Campus Information</h1>
+      <p class="page-hero-subtitle">
+        Reach our admission advisory team, administration office, or accounts department.
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Section -->
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem;">
+        
+        <!-- Interactive Enquiry Form -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Send Academic or Admission Enquiry</h3>
+            </div>
+            <div class="card-body">
+              <form id="contact-enquiry-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="cnt-name">Your Full Name <span class="required">*</span></label>
+                    <input type="text" id="cnt-name" class="form-control" placeholder="e.g. Tanvir Ahmed" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="cnt-mobile">Mobile Number <span class="required">*</span></label>
+                    <input type="tel" id="cnt-mobile" class="form-control" placeholder="01XXXXXXXXX" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="cnt-email">Email Address</label>
+                  <input type="email" id="cnt-email" class="form-control" placeholder="your.name@example.com">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="cnt-dept">Department / Subject of Inquiry</label>
+                  <select id="cnt-dept" class="form-control">
+                    <option value="Admission Desk">Admission Information Desk</option>
+                    <option value="Academic Council">Academic Programs & Eligibility</option>
+                    <option value="Accounts & Fees">Accounts & Fee Clearance</option>
+                    <option value="Principal Office">General Administration</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="cnt-message">Your Message / Query <span class="required">*</span></label>
+                  <textarea id="cnt-message" class="form-control" rows="4" placeholder="How can our college administration assist you today?" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg" id="btn-submit-contact">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Campus Details & Info -->
+        <div>
+          <div class="card" style="margin-bottom: 1.5rem;">
+            <div class="card-header">
+              <h4 class="card-title">Campus Location</h4>
+            </div>
+            <div class="card-body">
+              <div class="footer-contact-item" style="color: var(--color-navy); margin-bottom: 1.25rem;">
+                <svg class="icon icon-sm text-gold" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-map-pin"></use></svg>
+                <div>
+                  <strong>Agrabad Degree College Campus</strong><br>
+                  Agrabad Commercial Area (C/A), Double Mooring,<br>
+                  Chattogram - 4100, Bangladesh.
+                </div>
+              </div>
+
+              <div class="footer-contact-item" style="color: var(--color-navy); margin-bottom: 1.25rem;">
+                <svg class="icon icon-sm text-gold" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-phone"></use></svg>
+                <div>
+                  <strong>Telephone & Hotlines:</strong><br>
+                  PABX: +880 31 714520<br>
+                  Admission Hotline: 01812-345678, 01711-223344
+                </div>
+              </div>
+
+              <div class="footer-contact-item" style="color: var(--color-navy); margin-bottom: 1.25rem;">
+                <svg class="icon icon-sm text-gold" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-mail"></use></svg>
+                <div>
+                  <strong>Official Emails:</strong><br>
+                  General: info@agrabadcollege.edu.bd<br>
+                  Admissions: admission@agrabadcollege.edu.bd
+                </div>
+              </div>
+
+              <div class="footer-contact-item" style="color: var(--color-navy);">
+                <svg class="icon icon-sm text-gold" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-clock"></use></svg>
+                <div>
+                  <strong>Academic & Office Hours:</strong><br>
+                  Sunday to Thursday: 08:30 AM – 04:30 PM<br>
+                  Friday & Saturday: Closed
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location Map Visual Placeholder -->
+          <div class="card" style="overflow: hidden; border: 2px solid var(--color-slate-200);">
+            <div style="background: #e2e8f0; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--color-slate-600); text-align: center; padding: 1rem;">
+              <svg class="icon icon-xl text-navy" viewBox="0 0 24 24" style="margin-bottom: 0.5rem;"><use href="assets/icons/icons.svg#icon-map-pin"></use></svg>
+              <div class="fw-bold">Agrabad Commercial Area, Chattogram</div>
+              <div style="font-size: 0.75rem;">Near Badamtali More & Agrabad Access Road</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container text-center" style="font-size: 0.8125rem; color: var(--color-slate-400);">
+      &copy; 2025 Agrabad Degree College, Chattogram. All rights reserved.
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initGlobalNavigation } from './js/navigation.js';
+    import { showToast } from './js/utilities.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initGlobalNavigation();
+
+      const form = document.getElementById('contact-enquiry-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('cnt-name').value.trim();
+        showToast('Enquiry Dispatched', `Thank you, ${name}. Your inquiry has been forwarded to the college administration.`, 'success');
+        form.reset();
+      });
+    });
+  </script>
+</body>
+</html>

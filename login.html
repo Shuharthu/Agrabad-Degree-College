@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Login | Agrabad Degree College</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="background: linear-gradient(135deg, #0c2340 0%, #163e7a 100%); min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Simple Header -->
+  <header style="padding: 1.25rem 2rem;">
+    <a href="index.html" style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+      <img src="assets/logo/logo-crest.svg" alt="Agrabad Degree College Crest" style="width: 44px; height: 44px;">
+      <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: #fff;">Agrabad Degree College</span>
+    </a>
+  </header>
+
+  <!-- Login Main Card Area -->
+  <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1.5rem;">
+    <div class="card" style="max-width: 460px; width: 100%; box-shadow: var(--shadow-xl); border: 1px solid rgba(255, 255, 255, 0.1);">
+      
+      <!-- Card Header with Logo -->
+      <div class="card-header text-center" style="flex-direction: column; padding: 2rem 1.5rem 1.25rem 1.5rem; background: var(--color-slate-50);">
+        <img src="assets/logo/logo-full.svg" alt="Agrabad Degree College Logo" style="width: 170px; height: auto; margin-bottom: 0.75rem;">
+        <h2 style="font-size: 1.35rem; color: var(--color-navy); margin-bottom: 0.25rem;">College Portal Sign In</h2>
+        <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Sign in to access your authorized college services</p>
+      </div>
+
+      <div class="card-body">
+        
+        <!-- Role Tabs -->
+        <div class="tab-group" style="justify-content: center; margin-bottom: 1.5rem;">
+          <button type="button" class="tab-btn active role-tab" data-role="student">Student</button>
+          <button type="button" class="tab-btn role-tab" data-role="teacher">Teacher</button>
+          <button type="button" class="tab-btn role-tab" data-role="admin">Admin</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="portal-login-form">
+          <div class="form-group">
+            <label class="form-label" for="login-email" id="label-login-id">Email / Student ID</label>
+            <input type="text" id="login-email" class="form-control" placeholder="student@agrabadcollege.edu.bd" value="student@agrabadcollege.edu.bd" required>
+            <div class="invalid-feedback"></div>
+          </div>
+
+          <div class="form-group">
+            <div class="d-flex justify-between align-center" style="margin-bottom: 0.4rem;">
+              <label class="form-label" for="login-password" style="margin: 0;">Password</label>
+              <a href="#" id="link-forgot-pw" style="font-size: 0.78rem;">Forgot Password?</a>
+            </div>
+            <input type="password" id="login-password" class="form-control" placeholder="••••••••" value="demo123" required>
+            <div class="invalid-feedback"></div>
+          </div>
+
+          <div class="form-group">
+            <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; color: var(--color-slate-600); cursor: pointer;">
+              <input type="checkbox" checked>
+              <span>Keep me signed in on this workstation</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="btn-submit-login">
+            Sign In to Portal
+          </button>
+        </form>
+
+        <!-- Quick 1-Click Demo Logins for Instant Testing -->
+        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px dashed var(--color-slate-300);">
+          <div class="text-center text-muted" style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; margin-bottom: 0.75rem;">
+            Instant Quick Demo Evaluation Logins:
+          </div>
+          <div class="d-flex gap-2" style="flex-direction: column;">
+            <button type="button" class="btn btn-outline btn-sm quick-demo-btn" data-demo-role="student" style="justify-content: flex-start;">
+              <span class="badge badge-paid">Student</span>
+              <span>Shuvo Barua (ADC2025001)</span>
+            </button>
+            <button type="button" class="btn btn-outline btn-sm quick-demo-btn" data-demo-role="teacher" style="justify-content: flex-start;">
+              <span class="badge badge-review">Faculty</span>
+              <span>Prof. Rafiqul Islam (Senior Lecturer)</span>
+            </button>
+            <button type="button" class="btn btn-outline btn-sm quick-demo-btn" data-demo-role="admin" style="justify-content: flex-start;">
+              <span class="badge badge-danger">Admin</span>
+              <span>Principal Office & Controller</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card-footer text-center justify-center">
+        <span class="text-muted" style="font-size: 0.8125rem;">
+          New prospective student? <a href="admissions.html" class="fw-semibold">Apply for Admission</a>
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal-backdrop" id="modal-forgot-password">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Reset Portal Password</h3>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted" style="font-size: 0.88rem; margin-bottom: 1.25rem;">
+          Enter your registered institutional email or student email. We will dispatch a password recovery verification link.
+        </p>
+        <div class="form-group">
+          <label class="form-label" for="reset-email">Registered Email Address</label>
+          <input type="email" id="reset-email" class="form-control" placeholder="user@agrabadcollege.edu.bd">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline modal-close-btn">Cancel</button>
+        <button type="button" class="btn btn-primary" id="btn-send-reset">Send Recovery Link</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { auth } from './js/auth.js';
+    import { showToast, openModal, closeModal } from './js/utilities.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let selectedRole = 'student';
+
+      // Role Tabs Switcher
+      const tabs = document.querySelectorAll('.role-tab');
+      const emailInput = document.getElementById('login-email');
+      const labelId = document.getElementById('label-login-id');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          selectedRole = tab.getAttribute('data-role');
+
+          if (selectedRole === 'student') {
+            labelId.textContent = 'Email / Student ID';
+            emailInput.value = 'student@agrabadcollege.edu.bd';
+          } else if (selectedRole === 'teacher') {
+            labelId.textContent = 'Faculty Email Address';
+            emailInput.value = 'teacher@agrabadcollege.edu.bd';
+          } else if (selectedRole === 'admin') {
+            labelId.textContent = 'Administrator Email';
+            emailInput.value = 'admin@agrabadcollege.edu.bd';
+          }
+        });
+      });
+
+      // Quick Demo Switchers
+      document.querySelectorAll('.quick-demo-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const role = btn.getAttribute('data-demo-role');
+          try {
+            btn.disabled = true;
+            await auth.demoLogin(role);
+            showToast('Sign In Successful', `Welcome back! Redirecting to ${role} dashboard...`, 'success');
+            setTimeout(() => {
+              if (role === 'student') window.location.href = 'student-dashboard.html';
+              else if (role === 'teacher') window.location.href = 'teacher-dashboard.html';
+              else if (role === 'admin') window.location.href = 'admin-dashboard.html';
+            }, 600);
+          } catch (e) {
+            btn.disabled = false;
+            showToast('Login Failed', e.message, 'danger');
+          }
+        });
+      });
+
+      // Regular Form Submit
+      const form = document.getElementById('portal-login-form');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        const password = document.getElementById('login-password').value;
+        const submitBtn = document.getElementById('btn-submit-login');
+
+        try {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Authenticating...';
+          const user = await auth.login(email, password, selectedRole);
+          showToast('Authenticated', `Welcome back, ${user.displayName}!`, 'success');
+          
+          setTimeout(() => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const returnUrl = urlParams.get('returnUrl');
+            if (returnUrl) {
+              window.location.href = decodeURIComponent(returnUrl);
+              return;
+            }
+
+            if (user.role === 'student') window.location.href = 'student-dashboard.html';
+            else if (user.role === 'teacher') window.location.href = 'teacher-dashboard.html';
+            else if (user.role === 'admin') window.location.href = 'admin-dashboard.html';
+            else window.location.href = 'index.html';
+          }, 600);
+        } catch (err) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Sign In to Portal';
+          showToast('Login Error', err.message, 'danger');
+        }
+      });
+
+      // Forgot Password Modal
+      document.getElementById('link-forgot-pw').addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal('modal-forgot-password');
+      });
+
+      document.getElementById('btn-send-reset').addEventListener('click', async () => {
+        const mail = document.getElementById('reset-email').value.trim();
+        if (!mail) {
+          showToast('Email Required', 'Please enter your registered email.', 'warning');
+          return;
+        }
+        try {
+          const res = await auth.resetPassword(mail);
+          closeModal('modal-forgot-password');
+          showToast('Check Your Inbox', res.message, 'success');
+        } catch (err) {
+          showToast('Error', err.message, 'danger');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

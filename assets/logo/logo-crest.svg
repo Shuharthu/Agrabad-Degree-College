@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="crestNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f2b5c"/>
+      <stop offset="100%" stop-color="#071733"/>
+    </linearGradient>
+    <linearGradient id="crestGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="60%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+    <filter id="subtleShadow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0c2340" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(120, 118)" text-anchor="middle" filter="url(#subtleShadow2)">
+    <!-- Laurel Wreath Left -->
+    <g fill="#0f2b5c">
+      <path d="M -60,32 C -72,12 -76,-16 -66,-52 C -62,-40 -54,-24 -46,-12 C -56,4 -58,20 -60,32 Z"/>
+      <path d="M -66,-16 C -77,-28 -80,-52 -72,-76 C -67,-64 -56,-52 -48,-40 C -58,-28 -62,-20 -66,-16 Z"/>
+      <path d="M -56,-56 C -66,-72 -66,-96 -52,-112 C -48,-100 -40,-84 -30,-76 C -42,-68 -50,-60 -56,-56 Z"/>
+      <path d="M -36,-92 C -44,-108 -38,-128 -24,-140 C -22,-126 -18,-112 -10,-104 C -20,-100 -30,-96 -36,-92 Z"/>
+      <path d="M -48,8 C -58,-4 -59,-20 -52,-36 C -46,-26 -42,-16 -37,-8 C -42,0 -45,4 -48,8 Z" fill="#1a56db" opacity="0.85"/>
+      
+      <!-- Right Leaves -->
+      <path d="M 60,32 C 72,12 76,-16 66,-52 C 62,-40 54,-24 46,-12 C 56,4 58,20 60,32 Z"/>
+      <path d="M 66,-16 C 77,-28 80,-52 72,-76 C 67,-64 56,-52 48,-40 C 58,-28 62,-20 66,-16 Z"/>
+      <path d="M 56,-56 C 66,-72 66,-96 52,-112 C 48,-100 40,-84 30,-76 C 42,-68 50,-60 56,-56 Z"/>
+      <path d="M 36,-92 C 44,-108 38,-128 24,-140 C 22,-126 18,-112 10,-104 C 20,-100 30,-96 36,-92 Z"/>
+      <path d="M 48,8 C 58,-4 59,-20 52,-36 C 46,-26 42,-16 37,-8 C 42,0 45,4 48,8 Z" fill="#1a56db" opacity="0.85"/>
+    </g>
+
+    <!-- Flame & Torch -->
+    <path d="M 0,-104 C -10,-92 -11,-76 -3,-64 C -2,-56 2,-56 3,-64 C 11,-76 10,-92 0,-104 Z" fill="url(#flameGrad)"/>
+    <path d="M 0,-98 C -5,-88 -6,-78 0,-69 C 6,-78 5,-88 0,-98 Z" fill="#fef08a"/>
+    <path d="M -13,-62 L 13,-62 L 8,-48 L -8,-48 Z" fill="url(#crestGold)"/>
+    <path d="M -6,-48 L 6,-48 L 4,-12 L -4,-12 Z" fill="#0f2b5c"/>
+
+    <!-- Mortarboard -->
+    <g transform="translate(0, -76)">
+      <polygon points="0,-22 52,0 0,22 -52,0" fill="#0c2340"/>
+      <polygon points="0,-22 52,0 0,19 -49,-2" fill="#163e7a"/>
+      <path d="M -24,5 C -24,18 24,18 24,5 Z" fill="#071733"/>
+      <ellipse cx="0" cy="0" rx="3.6" ry="2.8" fill="url(#crestGold)"/>
+      <path d="M 0,0 Q -30,8 -37,30" fill="none" stroke="url(#crestGold)" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="-39,29 -34,31 -35,42 -40,40" fill="url(#crestGold)"/>
+    </g>
+
+    <!-- Open Book -->
+    <g transform="translate(0, 12)">
+      <path d="M -45,18 C -22,21 -5,11 0,6 C 5,11 22,21 45,18 L 45,-19 C 22,-16 5,-26 0,-29 C -5,-26 -22,-16 -45,-19 Z" fill="#091d3d"/>
+      <path d="M -42,14 C -22,17 -5,7 0,3 L 0,-26 C -5,-22 -22,-13 -42,-16 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <path d="M 42,14 C 22,17 5,7 0,3 L 0,-26 C 5,-22 22,-13 42,-16 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <g stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" opacity="0.8">
+        <line x1="-34" y1="-8" x2="-8" y2="-3"/>
+        <line x1="-34" y1="-2" x2="-8" y2="3"/>
+        <line x1="-34" y1="4" x2="-11" y2="9"/>
+        <line x1="8" y1="-3" x2="34" y2="-8"/>
+        <line x1="8" y1="3" x2="34" y2="-2"/>
+        <line x1="11" y1="9" x2="34" y2="4"/>
+      </g>
+    </g>
+
+    <!-- EST. 1995 Banner -->
+    <g transform="translate(0, 58)">
+      <polygon points="-62,-3 -72,5 -59,13" fill="#071733"/>
+      <polygon points="62,-3 72,5 59,13" fill="#071733"/>
+      <rect x="-54" y="-10" width="108" height="21" rx="3.5" fill="url(#crestNavy)" stroke="url(#crestGold)" stroke-width="1.4"/>
+      <text x="0" y="4" font-family="'Cinzel', 'Georgia', serif" font-size="9.5" font-weight="700" fill="#fbbf24" letter-spacing="2">EST. 1995</text>
+    </g>
+  </g>
+</svg>

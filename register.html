@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration | Agrabad Degree College</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="background: linear-gradient(135deg, #0c2340 0%, #163e7a 100%); min-height: 100vh; display: flex; flex-direction: column;">
+
+  <header style="padding: 1.25rem 2rem;">
+    <a href="index.html" style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+      <img src="assets/logo/logo-crest.svg" alt="Agrabad Degree College Crest" style="width: 44px; height: 44px;">
+      <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: #fff;">Agrabad Degree College</span>
+    </a>
+  </header>
+
+  <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 2rem 1.5rem;">
+    <div class="card" style="max-width: 520px; width: 100%; box-shadow: var(--shadow-xl);">
+      <div class="card-header text-center" style="flex-direction: column; padding: 1.75rem 1.5rem 1rem 1.5rem;">
+        <h2 style="font-size: 1.35rem; color: var(--color-navy); margin-bottom: 0.25rem;">Create Student Account</h2>
+        <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Register to submit admission applications, view routines, and pay fees</p>
+      </div>
+
+      <div class="card-body">
+        <form id="student-reg-form">
+          <div class="form-group">
+            <label class="form-label" for="reg-name">Full Name <span class="required">*</span></label>
+            <input type="text" id="reg-name" class="form-control" placeholder="e.g. Mohammad Tanvir" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Email Address <span class="required">*</span></label>
+              <input type="email" id="reg-email" class="form-control" placeholder="name@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-mobile">Mobile Number <span class="required">*</span></label>
+              <input type="tel" id="reg-mobile" class="form-control" placeholder="01XXXXXXXXX" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-program">Academic Program</label>
+              <select id="reg-program" class="form-control">
+                <option value="Higher Secondary (HSC)">Higher Secondary (HSC)</option>
+                <option value="Degree (Pass Course)">Degree (Pass Course)</option>
+                <option value="Honours">Honours</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-dept">Department / Group</label>
+              <select id="reg-dept" class="form-control">
+                <option value="Science">Science</option>
+                <option value="Business Studies">Business Studies</option>
+                <option value="Humanities">Humanities</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-password">Password <span class="required">*</span></label>
+              <input type="password" id="reg-password" class="form-control" placeholder="Minimum 6 characters" minlength="6" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-confirm">Confirm Password <span class="required">*</span></label>
+              <input type="password" id="reg-confirm" class="form-control" placeholder="Re-enter password" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.8125rem; color: var(--color-slate-600); cursor: pointer;">
+              <input type="checkbox" id="reg-terms" required style="margin-top: 0.2rem;">
+              <span>I agree to the college admission rules, code of conduct, and privacy terms.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="btn-submit-reg">
+            Register & Continue
+          </button>
+        </form>
+      </div>
+
+      <div class="card-footer text-center justify-center">
+        <span class="text-muted" style="font-size: 0.8125rem;">
+          Already have an account? <a href="login.html" class="fw-semibold">Sign In Here</a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { auth } from './js/auth.js';
+    import { showToast } from './js/utilities.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('student-reg-form');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const fullName = document.getElementById('reg-name').value.trim();
+        const email = document.getElementById('reg-email').value.trim();
+        const mobile = document.getElementById('reg-mobile').value.trim();
+        const program = document.getElementById('reg-program').value;
+        const department = document.getElementById('reg-dept').value;
+        const pass = document.getElementById('reg-password').value;
+        const confirm = document.getElementById('reg-confirm').value;
+
+        if (pass !== confirm) {
+          showToast('Password Mismatch', 'Passwords do not match.', 'danger');
+          return;
+        }
+
+        try {
+          const user = await auth.register({ fullName, email, password: pass, mobile, program, department });
+          showToast('Account Created!', `Welcome, ${user.displayName}. Redirecting to Student Dashboard...`, 'success');
+          setTimeout(() => {
+            window.location.href = 'student-dashboard.html';
+          }, 800);
+        } catch (err) {
+          showToast('Registration Error', err.message, 'danger');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

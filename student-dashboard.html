@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | Agrabad Degree College</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    
+    <!-- Collapsible Navy Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <img src="assets/logo/logo-crest.svg" alt="Agrabad Crest" class="sidebar-crest">
+        <div>
+          <div class="sidebar-brand-name">Agrabad</div>
+          <div class="sidebar-brand-sub">Degree College</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="student-dashboard.html" class="sidebar-link active">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-dashboard"></use></svg>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="profile.html" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-user"></use></svg>
+          <span>Profile</span>
+        </a>
+
+        <a href="#section-courses" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-book"></use></svg>
+          <span>My Courses</span>
+        </a>
+
+        <a href="#section-routine" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-calendar"></use></svg>
+          <span>Routine</span>
+        </a>
+
+        <a href="#section-attendance" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-check-circle"></use></svg>
+          <span>Attendance</span>
+        </a>
+
+        <a href="#section-results" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-award"></use></svg>
+          <span>Exam Results</span>
+        </a>
+
+        <a href="notices.html" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-bell"></use></svg>
+          <span>Notices</span>
+          <span class="badge-counter">3</span>
+        </a>
+
+        <a href="payments.html" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-wallet"></use></svg>
+          <span>Payments</span>
+        </a>
+
+        <a href="#section-documents" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-file-text"></use></svg>
+          <span>Documents</span>
+        </a>
+
+        <a href="#section-settings" class="sidebar-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-settings"></use></svg>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="sidebar-logout-btn">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-logout"></use></svg>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" aria-label="Toggle sidebar">
+            <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-menu"></use></svg>
+          </button>
+          <div class="topbar-greeting">
+            <h2>Welcome back, <span class="user-display-name">Shuvo</span>!</h2>
+            <p>Here's what's happening at your college today.</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Notification Bell -->
+          <button class="topbar-icon-btn" aria-label="Notifications" onclick="window.location.href='notices.html'">
+            <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-bell"></use></svg>
+            <span class="topbar-badge">3</span>
+          </button>
+
+          <!-- User Profile Display -->
+          <div class="topbar-user-profile">
+            <div class="topbar-avatar">SB</div>
+            <div class="topbar-user-info">
+              <span class="topbar-user-name user-display-name">Shuvo Barua</span>
+              <span class="topbar-user-role user-role-badge">Student</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Body Content -->
+      <div class="dashboard-content">
+        
+        <!-- 4 Top KPI Stat Cards -->
+        <div class="stats-grid">
+          
+          <div class="stat-card">
+            <div class="stat-icon-wrap blue">
+              <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-book"></use></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Total Courses</span>
+              <span class="stat-value" id="stat-total-courses">5</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon-wrap green">
+              <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-check-circle"></use></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Attendance</span>
+              <span class="stat-value" id="stat-attendance">92%</span>
+            </div>
+          </div>
+
+          <div class="stat-card" style="cursor: pointer;" onclick="window.location.href='payments.html'">
+            <div class="stat-icon-wrap amber">
+              <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-wallet"></use></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Pending Fees</span>
+              <span class="stat-value" id="stat-pending-fees">৳ 2,500</span>
+            </div>
+          </div>
+
+          <div class="stat-card" style="cursor: pointer;" onclick="window.location.href='notices.html'">
+            <div class="stat-icon-wrap purple">
+              <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-bell"></use></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Notices</span>
+              <span class="stat-value" id="stat-notices-count">3</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Two Columns: Upcoming Classes + Recent Notices -->
+        <div class="dashboard-columns">
+          
+          <!-- Upcoming Classes Table Card -->
+          <div class="card schedule-table-card">
+            <div class="card-header">
+              <h3 class="card-title">Upcoming Classes</h3>
+              <a href="#section-routine" class="btn btn-outline btn-sm">View Routine</a>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Subject & Teacher</th>
+                    <th>Room</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="upcoming-classes-body">
+                  <!-- Populated via students.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Recent Notices Preview Card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Recent Notices</h3>
+              <a href="notices.html" class="btn btn-outline btn-sm">View All</a>
+            </div>
+            <div class="card-body">
+              <div class="notice-widget-list" id="recent-notices-widget">
+                <!-- Populated via students.js -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Quick Actions Row -->
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1.05rem; margin-bottom: 0.75rem; color: var(--color-navy);">Quick Actions</h4>
+          <div class="quick-actions-bar">
+            <a href="admissions.html" class="quick-action-btn action-primary">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-file-text"></use></svg>
+              <span>Apply for Admission</span>
+            </a>
+
+            <a href="payments.html" class="quick-action-btn action-green">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-credit-card"></use></svg>
+              <span>Pay Fees</span>
+            </a>
+
+            <a href="#section-results" class="quick-action-btn action-purple">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-award"></use></svg>
+              <span>View Result</span>
+            </a>
+
+            <button type="button" class="quick-action-btn" id="btn-view-id-card">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-download"></use></svg>
+              <span>Download ID Card</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section: My Enrolled Courses -->
+        <div id="section-courses" style="margin-bottom: 2.5rem;">
+          <div class="d-flex justify-between align-center" style="margin-bottom: 1rem;">
+            <h3 style="font-size: 1.25rem; color: var(--color-navy);">Enrolled Courses</h3>
+            <span class="badge badge-paid">Session: 2025 - 2026</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;" id="student-courses-container">
+            <!-- Populated via students.js -->
+          </div>
+        </div>
+
+        <!-- Section: Weekly Routine -->
+        <div id="section-routine" style="margin-bottom: 2.5rem;">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Weekly Class Routine</h3>
+              <button onclick="window.print()" class="btn btn-outline btn-sm">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-printer"></use></svg>
+                Print Routine
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Day</th>
+                    <th>Time Slot</th>
+                    <th>Subject</th>
+                    <th>Room</th>
+                    <th>Instructor</th>
+                  </tr>
+                </thead>
+                <tbody id="student-routine-tbody">
+                  <!-- Populated via students.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: Examination Results -->
+        <div id="section-results" style="margin-bottom: 2.5rem;">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Academic Examination Results</h3>
+                <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Cumulative Grade Point Average (CGPA): <strong class="text-success">4.80 / 5.00</strong></p>
+              </div>
+              <button onclick="window.print()" class="btn btn-outline btn-sm">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-printer"></use></svg>
+                Download Grade Sheet
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Course Code</th>
+                    <th>Course Title</th>
+                    <th>Marks</th>
+                    <th>Grade</th>
+                    <th>GPA</th>
+                    <th>Semester</th>
+                  </tr>
+                </thead>
+                <tbody id="student-results-tbody">
+                  <!-- Populated via students.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Printable Student ID Card Modal -->
+  <div class="modal-backdrop" id="modal-id-card">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Official Student ID Card</h3>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body text-center" style="background: #f1f5f9; padding: 2rem 1.5rem;">
+        
+        <!-- Physical Card Structure -->
+        <div class="student-id-card" id="printable-id-card-view">
+          <div class="student-id-header">
+            <img src="assets/logo/logo-crest.svg" alt="College Crest" style="width: 40px; height: 40px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));">
+            <div class="text-left">
+              <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 700; color: #fff; line-height: 1.1;">Agrabad Degree College</div>
+              <div style="font-size: 0.65rem; color: #fbbf24; letter-spacing: 0.05em; text-transform: uppercase;">Chattogram, Bangladesh</div>
+            </div>
+          </div>
+
+          <div class="student-id-photo-box">
+            <div style="width: 80px; height: 95px; background: #fff; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 2px solid #fff; flex-shrink: 0;">
+              <svg class="icon icon-xl text-navy" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-user"></use></svg>
+            </div>
+            <div class="text-left student-id-info" style="flex: 1;">
+              <div style="font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 0.25rem;" id="idcard-name">Shuvo Barua</div>
+              <div>ID: <strong id="idcard-id">ADC2025001</strong></div>
+              <div>Program: <span id="idcard-program">Higher Secondary (HSC)</span></div>
+              <div>Dept: <span id="idcard-dept">Science</span></div>
+              <div>Session: <span id="idcard-session">2025 - 2026</span></div>
+              <div>Blood Group: <span id="idcard-blood">B+</span></div>
+            </div>
+          </div>
+
+          <div style="border-top: 1px dashed rgba(255, 255, 255, 0.25); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.65rem; color: #94a3b8;">
+            <span>Authorized Principal Signature</span>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #fff;">||| | |||| | ||| ||</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline modal-close-btn">Close</button>
+        <button type="button" class="btn btn-primary" id="btn-print-id-card">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-printer"></use></svg>
+          Print ID Card
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { checkPageAccess, initDashboardTopbar } from './js/guards.js';
+    import { StudentPortal } from './js/students.js';
+    import { initModals } from './js/utilities.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initModals();
+      const user = checkPageAccess(['student']);
+      if (!user) return;
+
+      initDashboardTopbar(user);
+
+      const portal = new StudentPortal();
+      portal.init();
+    });
+  </script>
+</body>
+</html>

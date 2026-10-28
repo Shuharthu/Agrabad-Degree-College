@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="favBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f2b5c"/>
+      <stop offset="100%" stop-color="#071733"/>
+    </linearGradient>
+    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#favBg)"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="url(#favGold)" stroke-width="1.5" opacity="0.8"/>
+  <g transform="translate(32, 33) scale(0.35)">
+    <!-- Laurel Wreath -->
+    <g fill="#38bdf8">
+      <path d="M -60,32 C -72,12 -76,-16 -66,-52 C -62,-40 -54,-24 -46,-12 C -56,4 -58,20 -60,32 Z"/>
+      <path d="M -66,-16 C -77,-28 -80,-52 -72,-76 C -67,-64 -56,-52 -48,-40 C -58,-28 -62,-20 -66,-16 Z"/>
+      <path d="M 60,32 C 72,12 76,-16 66,-52 C 62,-40 54,-24 46,-12 C 56,4 58,20 60,32 Z"/>
+      <path d="M 66,-16 C 77,-28 80,-52 72,-76 C 67,-64 56,-52 48,-40 C 58,-28 62,-20 66,-16 Z"/>
+    </g>
+    <!-- Flame & Torch -->
+    <path d="M 0,-100 C -10,-88 -11,-72 -3,-60 C -2,-52 2,-52 3,-60 C 11,-72 10,-88 0,-100 Z" fill="url(#favGold)"/>
+    <!-- Mortarboard -->
+    <polygon points="0,-22 52,0 0,22 -52,0" fill="#ffffff" transform="translate(0,-68)"/>
+    <ellipse cx="0" cy="-68" rx="4" ry="3" fill="url(#favGold)"/>
+    <path d="M 0,-68 Q -28,-60 -34,-40" fill="none" stroke="url(#favGold)" stroke-width="3"/>
+    <!-- Open Book -->
+    <g transform="translate(0, 16)">
+      <path d="M -45,18 C -22,21 -5,11 0,6 C 5,11 22,21 45,18 L 45,-19 C 22,-16 5,-26 0,-29 C -5,-26 -22,-16 -45,-19 Z" fill="#0284c7"/>
+      <path d="M -42,14 C -22,17 -5,7 0,3 L 0,-26 C -5,-22 -22,-13 -42,-16 Z" fill="#ffffff"/>
+      <path d="M 42,14 C 22,17 5,7 0,3 L 0,-26 C 5,-22 22,-13 42,-16 Z" fill="#ffffff"/>
+    </g>
+  </g>
+</svg>

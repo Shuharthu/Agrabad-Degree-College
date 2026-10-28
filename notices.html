@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notice Board & Circulars | Agrabad Degree College</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-notice-bar">
+    <div class="top-notice-container">
+      <div class="top-notice-left">
+        <span class="top-notice-tag">Notice</span>
+        <div class="top-notice-ticker">
+          ★ Official notice board of Agrabad Degree College, Chattogram. All circulars are authorized by Principal & Academic Council.
+        </div>
+      </div>
+      <div class="top-notice-right">
+        <a href="tel:+88031714520" class="top-notice-link">+880 31 714520</a>
+        <a href="admission-status.html" class="top-notice-link" style="color: var(--color-gold-bright);">Track Application</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header-main">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo/logo-crest.svg" alt="Agrabad Degree College Crest" class="brand-crest">
+        <div class="brand-texts">
+          <span class="brand-name">Agrabad Degree College</span>
+          <span class="brand-subtext">Official Notice Board</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="programs.html" class="nav-link">Courses & Programs</a>
+        <a href="admissions.html" class="nav-link">Admission</a>
+        <a href="notices.html" class="nav-link active">Notice Board</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Portal Login</a>
+        <a href="admissions.html" class="btn btn-primary btn-sm">Apply Now</a>
+      </div>
+
+      <button class="mobile-toggle-btn" aria-label="Toggle navigation menu">
+        <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-menu"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb-nav" style="margin-bottom: 0.5rem;">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span style="color: #fff;">Notice Board</span>
+      </div>
+      <h1 class="page-hero-title">Official Circulars & Notice Board</h1>
+      <p class="page-hero-subtitle">
+        Stay updated with official academic schedules, examination routines, college holidays, and admission notifications.
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Section -->
+  <section class="section" style="padding-top: 2rem;">
+    <div class="container" style="max-width: 900px;">
+      
+      <!-- Filter and Search Toolbar -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            
+            <!-- Category Filter Buttons -->
+            <div class="d-flex gap-1" style="flex-wrap: wrap;">
+              <button type="button" class="btn btn-navy btn-sm notice-filter-btn active" data-cat="All">All Circulars</button>
+              <button type="button" class="btn btn-outline btn-sm notice-filter-btn" data-cat="Academic">Academic</button>
+              <button type="button" class="btn btn-outline btn-sm notice-filter-btn" data-cat="Examinations">Examinations</button>
+              <button type="button" class="btn btn-outline btn-sm notice-filter-btn" data-cat="Admission">Admission</button>
+              <button type="button" class="btn btn-outline btn-sm notice-filter-btn" data-cat="Holidays">Holidays</button>
+            </div>
+
+            <!-- Search Field -->
+            <div style="width: 260px;">
+              <input type="text" id="notice-search-input" class="form-control" placeholder="Search notices...">
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Notices Dynamic List -->
+      <div id="notices-list-container">
+        <!-- Populated via notices.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modal: View Official Notice -->
+  <div class="modal-backdrop" id="modal-view-notice">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-notice-title">Official Notice</h3>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="font-size: 0.8125rem; color: var(--color-slate-500); margin-bottom: 1.25rem;" id="modal-notice-date">-</div>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--color-navy); margin-bottom: 1.5rem;" id="modal-notice-body">-</p>
+        <div style="border-top: 1px solid var(--color-slate-200); padding-top: 1rem; font-size: 0.8125rem; color: var(--color-slate-600);">
+          By Order of: <strong id="modal-notice-issuer" class="text-navy">-</strong><br>
+          Agrabad Degree College, Chattogram.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline modal-close-btn">Close</button>
+        <button type="button" class="btn btn-primary" onclick="window.print()">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-printer"></use></svg>
+          Print Circular
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container text-center" style="font-size: 0.8125rem; color: var(--color-slate-400);">
+      &copy; 2025 Agrabad Degree College, Chattogram. All rights reserved.
+    </div>
+  </footer>
+
+  <script type="module">
+    import { NoticeBoard } from './js/notices.js';
+    import { initGlobalNavigation } from './js/navigation.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initGlobalNavigation();
+      const nb = new NoticeBoard();
+      nb.init();
+    });
+  </script>
+</body>
+</html>

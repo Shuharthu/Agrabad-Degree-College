@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Admission Portal | Agrabad Degree College</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Main Public Header -->
+  <header class="header-main">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo/logo-crest.svg" alt="Agrabad Degree College Crest" class="brand-crest">
+        <div class="brand-texts">
+          <span class="brand-name">Agrabad Degree College</span>
+          <span class="brand-subtext">Online Admission Portal</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="programs.html" class="nav-link">Programs & Eligibility</a>
+        <a href="admissions.html" class="nav-link active">Apply Online</a>
+        <a href="admission-status.html" class="nav-link">Track Status</a>
+        <a href="login.html" class="nav-link">Student Login</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="admission-status.html" class="btn btn-outline btn-sm">Check Status</a>
+      </div>
+
+      <button class="mobile-toggle-btn" aria-label="Toggle navigation menu">
+        <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-menu"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Hero Header -->
+  <div class="page-hero" style="padding: 2.5rem 1.25rem;">
+    <div class="container">
+      <div class="breadcrumb-nav" style="margin-bottom: 0.5rem;">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Admissions</span>
+        <span>/</span>
+        <span style="color: #fff;">Online Application</span>
+      </div>
+      <h1 class="page-hero-title">New Student Admission Portal</h1>
+      <p class="page-hero-subtitle">
+        Academic Session 2025 - 2026. Complete the online admission form in 4 simple steps.
+      </p>
+    </div>
+  </div>
+
+  <!-- Admission Wizard Form Container -->
+  <div class="section" style="padding-top: 2rem;">
+    <div class="container" style="max-width: 900px;">
+
+      <div id="admission-form-container">
+        <!-- Multistep Wizard Progress Bar -->
+        <div class="wizard-steps">
+          <div class="wizard-progress-bar"></div>
+          
+          <div class="wizard-step active" data-step="1">
+            <div class="wizard-step-circle">1</div>
+            <span class="wizard-step-label">Personal Info</span>
+          </div>
+
+          <div class="wizard-step" data-step="2">
+            <div class="wizard-step-circle">2</div>
+            <span class="wizard-step-label">Academic Info</span>
+          </div>
+
+          <div class="wizard-step" data-step="3">
+            <div class="wizard-step-circle">3</div>
+            <span class="wizard-step-label">Documents</span>
+          </div>
+
+          <div class="wizard-step" data-step="4">
+            <div class="wizard-step-circle">4</div>
+            <span class="wizard-step-label">Review & Submit</span>
+          </div>
+        </div>
+
+        <div class="card" style="box-shadow: var(--shadow-md);">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title" id="wizard-step-heading">Online Admission Form</h2>
+              <p class="text-muted" style="font-size: 0.8125rem; margin: 0;">Fill in the form carefully. All information must be accurate as per official educational boards.</p>
+            </div>
+            <span class="badge badge-review">Session 2025-2026</span>
+          </div>
+
+          <div class="card-body">
+            
+            <!-- STEP 1: PERSONAL INFORMATION -->
+            <div class="wizard-pane active" id="pane-step-1">
+              <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem; color: var(--color-navy); border-bottom: 1px solid var(--color-slate-200); padding-bottom: 0.5rem;">
+                Step 1: Personal Information
+              </h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="adm-fullname">Applicant Full Name <span class="required">*</span></label>
+                  <input type="text" id="adm-fullname" class="form-control" placeholder="e.g. Shuvo Barua" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="adm-dob">Date of Birth <span class="required">*</span></label>
+                  <input type="date" id="adm-dob" class="form-control" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="adm-gender">Gender <span class="required">*</span></label>
+                  <select id="adm-gender" class="form-control" required>
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="adm-mobile">Mobile Number (11 Digits) <span class="required">*</span></label>
+                  <input type="tel" id="adm-mobile" class="form-control" placeholder="e.g. 01812345678" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="adm-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="adm-email" class="form-control" placeholder="e.g. applicant@gmail.com" required>
+                <div class="invalid-feedback"></div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="adm-present-addr">Present Address <span class="required">*</span></label>
+                  <textarea id="adm-present-addr" class="form-control" rows="2" placeholder="House/Road, Area, Chattogram" required></textarea>
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="adm-perm-addr">Permanent Address</label>
+                  <textarea id="adm-perm-addr" class="form-control" rows="2" placeholder="Village, Post Office, Upazila, District"></textarea>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="adm-guardian-name">Father / Mother / Guardian Name <span class="required">*</span></label>
+                  <input type="text" id="adm-guardian-name" class="form-control" placeholder="Guardian's Full Name" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="adm-guardian-mobile">Guardian Mobile Number</label>
+                  <input type="tel" id="adm-guardian-mobile" class="form-control" placeholder="e.g. 01711223344">
+                </div>
+              </div>
+
+              <div class="d-flex justify-between" style="margin-top: 1.5rem; border-top: 1px solid var(--color-slate-200); padding-top: 1.25rem;">
+                <div></div>
+                <button type="button" class="btn btn-primary" data-wizard-next>
+                  Next: Academic Info
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-chevron-right"></use></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 2: ACADEMIC INFO -->
+            <div class="wizard-pane" id="pane-step-2">
+              <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem; color: var(--color-navy); border-bottom: 1px solid var(--color-slate-200); padding-bottom: 0.5rem;">
+                Step 2: Desired Program & Prior Academic Examination
+              </h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="adm-program">Desired Program <span class="required">*</span></label>
+                  <select id="adm-program" class="form-control" required>
+                    <option value="">Select Academic Program</option>
+                    <option value="Higher Secondary (HSC)">Higher Secondary (HSC)</option>
+                    <option value="Degree (Pass Course)">Degree (Pass Course)</option>
+                    <option value="Honours">Honours</option>
+                  </select>
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="adm-department">Department / Discipline <span class="required">*</span></label>
+                  <select id="adm-department" class="form-control" required>
+                    <option value="">Select Department / Group</option>
+                    <option value="Science">Science</option>
+                    <option value="Business Studies">Business Studies / Commerce</option>
+                    <option value="Humanities">Humanities / Arts</option>
+                    <option value="B.Sc Honours in Mathematics">B.Sc Honours in Mathematics</option>
+                    <option value="BBA / Management">BBA / Management</option>
+                    <option value="B.A (Bachelor of Arts)">B.A (Bachelor of Arts)</option>
+                  </select>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+
+              <h4 style="font-size: 1rem; color: var(--color-navy); margin: 1.5rem 0 0.75rem 0;">
+                SSC or Equivalent Examination Records
+              </h4>
+
+              <div class="form-row-3">
+                <div class="form-group">
+                  <label class="form-label" for="adm-ssc-board">Education Board <span class="required">*</span></label>
+                  <select id="adm-ssc-board" class="form-control" required>
+                    <option value="">Select Board</option>
+                    <option value="Chattogram" selected>Chattogram</option>
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="Cumilla">Cumilla</option>
+                    <option value="Rajshahi">Rajshahi</option>
+                    <option value="Jashore">Jashore</option>
+                    <option value="Barishal">Barishal</option>
+                    <option value="Sylhet">Sylhet</option>
+                    <option value="Dinajpur">Dinajpur</option>
+                    <option value="Mymensingh">Mymensingh</option>
+                    <option value="Madrasah">Madrasah</option>
+                    <option value="Technical">Technical</option>
+                  </select>
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="adm-ssc-roll">SSC Roll Number <span class="required">*</span></label>
+                  <input type="text" id="adm-ssc-roll" class="form-control" placeholder="e.g. 402910" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="adm-ssc-year">Passing Year <span class="required">*</span></label>
+                  <select id="adm-ssc-year" class="form-control" required>
+                    <option value="2025">2025</option>
+                    <option value="2024" selected>2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                  </select>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="adm-ssc-gpa">SSC GPA (Out of 5.00) <span class="required">*</span></label>
+                  <input type="number" step="0.01" min="1.00" max="5.00" id="adm-ssc-gpa" class="form-control" placeholder="e.g. 5.00" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="adm-ssc-reg">SSC Registration Number</label>
+                  <input type="text" id="adm-ssc-reg" class="form-control" placeholder="e.g. 1914283920">
+                </div>
+              </div>
+
+              <div class="d-flex justify-between" style="margin-top: 1.5rem; border-top: 1px solid var(--color-slate-200); padding-top: 1.25rem;">
+                <button type="button" class="btn btn-outline" data-wizard-prev>Back</button>
+                <button type="button" class="btn btn-primary" data-wizard-next>
+                  Next: Document Uploads
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-chevron-right"></use></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 3: DOCUMENTS UPLOAD -->
+            <div class="wizard-pane" id="pane-step-3">
+              <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem; color: var(--color-navy); border-bottom: 1px solid var(--color-slate-200); padding-bottom: 0.5rem;">
+                Step 3: Document Attachments
+              </h3>
+              <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 1.25rem;">
+                Upload scanned copies of required credentials. Max size 2MB per file (JPG, PNG, or PDF).
+              </p>
+
+              <div class="form-row">
+                <!-- Photo Dropzone -->
+                <div class="form-group">
+                  <label class="form-label">Applicant Passport Photo (Required)</label>
+                  <div class="upload-dropzone">
+                    <input type="file" id="adm-file-photo" accept="image/*">
+                    <svg class="icon upload-icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-upload-cloud"></use></svg>
+                    <div class="fw-semibold upload-text-name">Click or Drag & Drop Photo</div>
+                    <div class="text-muted" style="font-size: 0.78rem;">Formal passport size photo with white background</div>
+                  </div>
+                </div>
+
+                <!-- SSC Marksheet Dropzone -->
+                <div class="form-group">
+                  <label class="form-label">SSC Academic Transcript / Marksheet</label>
+                  <div class="upload-dropzone">
+                    <input type="file" id="adm-file-marksheet" accept="image/*,.pdf">
+                    <svg class="icon upload-icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-upload-cloud"></use></svg>
+                    <div class="fw-semibold upload-text-name">Click or Drag & Drop Marksheet</div>
+                    <div class="text-muted" style="font-size: 0.78rem;">Official board transcript or digital marksheet</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <!-- Birth Certificate Dropzone -->
+                <div class="form-group">
+                  <label class="form-label">Birth Certificate / National ID Card</label>
+                  <div class="upload-dropzone">
+                    <input type="file" id="adm-file-nid" accept="image/*,.pdf">
+                    <svg class="icon upload-icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-upload-cloud"></use></svg>
+                    <div class="fw-semibold upload-text-name">Click or Drag Birth Certificate / NID</div>
+                    <div class="text-muted" style="font-size: 0.78rem;">Digital birth registration certificate or smart card</div>
+                  </div>
+                </div>
+
+                <!-- Testimonial Dropzone -->
+                <div class="form-group">
+                  <label class="form-label">School Testimonial / Character Certificate</label>
+                  <div class="upload-dropzone">
+                    <input type="file" id="adm-file-testimonial" accept="image/*,.pdf">
+                    <svg class="icon upload-icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-upload-cloud"></use></svg>
+                    <div class="fw-semibold upload-text-name">Click or Drag Testimonial</div>
+                    <div class="text-muted" style="font-size: 0.78rem;">Issued by Headmaster / Principal of previous school</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-between" style="margin-top: 1.5rem; border-top: 1px solid var(--color-slate-200); padding-top: 1.25rem;">
+                <button type="button" class="btn btn-outline" data-wizard-prev>Back</button>
+                <button type="button" class="btn btn-primary" data-wizard-next>
+                  Next: Review Application
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-chevron-right"></use></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 4: REVIEW & SUBMIT -->
+            <div class="wizard-pane" id="pane-step-4">
+              <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem; color: var(--color-navy); border-bottom: 1px solid var(--color-slate-200); padding-bottom: 0.5rem;">
+                Step 4: Review Application Information
+              </h3>
+
+              <div class="card" style="background: var(--color-slate-50); margin-bottom: 1.5rem;">
+                <div class="card-body">
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.88rem;">
+                    <div><strong>Applicant Full Name:</strong> <span id="rev-fullname">-</span></div>
+                    <div><strong>Mobile Number:</strong> <span id="rev-mobile">-</span></div>
+                    <div><strong>Email:</strong> <span id="rev-email">-</span></div>
+                    <div><strong>Date of Birth:</strong> <span id="rev-dob">-</span></div>
+                    <div><strong>Present Address:</strong> <span id="rev-address">-</span></div>
+                    <div><strong>Guardian Name:</strong> <span id="rev-guardian">-</span></div>
+                    <div><strong>Desired Program:</strong> <span id="rev-program">-</span></div>
+                    <div><strong>Department / Group:</strong> <span id="rev-department">-</span></div>
+                    <div><strong>SSC Board & Roll:</strong> <span id="rev-ssc-board">-</span> (Roll: <span id="rev-ssc-roll">-</span>)</div>
+                    <div><strong>SSC GPA:</strong> <span id="rev-ssc-gpa" class="fw-bold text-success">-</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="background: var(--color-blue-subtle); border: 1px solid var(--color-blue-light); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem;">
+                <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; font-size: 0.88rem; color: var(--color-navy);">
+                  <input type="checkbox" id="adm-declaration" style="margin-top: 0.25rem; cursor: pointer;">
+                  <span>
+                    I hereby declare that all the information and certificates provided in this admission form are true, correct, and complete to the best of my knowledge. If any information is found false, my application will be cancelled immediately.
+                  </span>
+                </label>
+              </div>
+
+              <div class="d-flex justify-between" style="border-top: 1px solid var(--color-slate-200); padding-top: 1.25rem;">
+                <button type="button" class="btn btn-outline" data-wizard-prev>Back</button>
+                <button type="button" class="btn btn-success btn-lg" id="btn-submit-admission">
+                  <svg class="icon" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-check-circle"></use></svg>
+                  Submit Application Now
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Application Success Confirmation Box -->
+      <div id="admission-success-container" style="display: none;">
+        <div class="card text-center" style="padding: 3rem 2rem; border-top: 5px solid var(--color-success);">
+          <div style="width: 72px; height: 72px; background: var(--color-success-light); color: var(--color-success-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+            <svg class="icon icon-xl" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-check-circle"></use></svg>
+          </div>
+          <h2 style="color: var(--color-navy); margin-bottom: 0.5rem;">Application Successfully Submitted!</h2>
+          <p class="text-muted" style="max-width: 500px; margin: 0 auto 1.5rem auto;">
+            Your admission application for Agrabad Degree College has been received and queued for academic committee review.
+          </p>
+
+          <div style="background: var(--color-slate-50); border: 2px dashed var(--color-slate-300); border-radius: var(--radius-lg); padding: 1.5rem; max-width: 480px; margin: 0 auto 2rem auto;">
+            <div class="text-muted" style="font-size: 0.8125rem; margin-bottom: 0.35rem;">YOUR UNIQUE APPLICATION REFERENCE NUMBER</div>
+            <div id="success-ref-num" style="font-size: 2rem; font-weight: 800; color: var(--color-blue-primary); letter-spacing: 2px; font-family: var(--font-mono);">
+              ADC-2025-XXXX
+            </div>
+            <div class="text-muted" style="font-size: 0.8125rem; margin-top: 0.5rem;">
+              Applicant: <strong id="success-applicant-name">-</strong> • Program: <strong id="success-program-name">-</strong>
+            </div>
+          </div>
+
+          <div class="d-flex justify-center gap-3">
+            <button onclick="window.print()" class="btn btn-outline">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="assets/icons/icons.svg#icon-printer"></use></svg>
+              Print Confirmation Slip
+            </button>
+            <a href="admission-status.html" class="btn btn-primary">
+              Track Application Status
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="margin-top: 3rem;">
+    <div class="container text-center" style="font-size: 0.8125rem; color: var(--color-slate-400);">
+      &copy; 2025 Agrabad Degree College, Chattogram. Admission Help Desk: +880 31 714520.
+    </div>
+  </footer>
+
+  <script type="module">
+    import { AdmissionManager } from './js/admissions.js';
+    import { initGlobalNavigation } from './js/navigation.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initGlobalNavigation();
+      const adm = new AdmissionManager();
+      adm.initWizard();
+    });
+  </script>
+</body>
+</html>

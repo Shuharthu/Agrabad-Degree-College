@@ -1,0 +1,19 @@
+{
+  "name": "agrabad-degree-college-mis",
+  "version": "1.0.0",
+  "description": "Agrabad Degree College Management Information System (ADC-MIS)",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "test": "node js/test-system.js"
+  },
+  "keywords": [
+    "college-management-system",
+    "education",
+    "bangladesh",
+    "chattogram",
+    "agrabad"
+  ],
+  "author": "Agrabad Degree College",
+  "license": "ISC"
+}
