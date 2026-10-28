@@ -458,6 +458,18 @@ class MockDatabaseEngine {
     return col.find(item => item.id === id || item.uid === id || item.refNumber === id || item.transactionRef === id);
   }
 
+  async syncToCloud(collectionName, item) {
+    if (typeof window !== 'undefined' && window.firebaseDb) {
+      try {
+        const { setDoc, doc } = await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js");
+        const docId = String(item.id || item.uid || item.refNumber || Date.now());
+        await setDoc(doc(window.firebaseDb, collectionName, docId), item, { merge: true });
+      } catch (err) {
+        console.warn('Cloud sync skipped:', err.message);
+      }
+    }
+  }
+
   insert(collectionName, item) {
     const db = this.getDb();
     if (!db[collectionName]) db[collectionName] = [];
@@ -465,6 +477,7 @@ class MockDatabaseEngine {
     if (!item.createdAt) item.createdAt = new Date().toISOString();
     db[collectionName].unshift(item);
     this.saveDb(db);
+    this.syncToCloud(collectionName, item);
     return item;
   }
 
@@ -475,6 +488,7 @@ class MockDatabaseEngine {
     if (index !== -1) {
       db[collectionName][index] = { ...db[collectionName][index], ...updates, updatedAt: new Date().toISOString() };
       this.saveDb(db);
+      this.syncToCloud(collectionName, db[collectionName][index]);
       return db[collectionName][index];
     }
     return null;

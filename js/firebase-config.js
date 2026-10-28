@@ -1,27 +1,90 @@
 /**
- * AGRABAD DEGREE COLLEGE - FIREBASE CONFIGURATION & ADAPTER
- * Supports both Live Firebase (v10+ Modular SDK) and high-fidelity Local Sandbox Mode.
- * Real credentials should be supplied via environment or hosting deployment.
+ * AGRABAD DEGREE COLLEGE - LIVE FIREBASE CONFIGURATION & MODULAR SDK ADAPTER
+ * Connected to live Firebase Project: agrabad-degree-college
  */
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { 
+  getAuth, 
+  signInWithEmailAndPassword, 
+  createUserWithEmailAndPassword, 
+  signOut, 
+  onAuthStateChanged,
+  sendPasswordResetEmail
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { 
+  getFirestore, 
+  collection, 
+  doc, 
+  getDoc, 
+  getDocs, 
+  setDoc, 
+  addDoc, 
+  updateDoc, 
+  deleteDoc, 
+  query, 
+  where, 
+  orderBy, 
+  serverTimestamp 
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { 
+  getStorage, 
+  ref, 
+  uploadBytes, 
+  getDownloadURL 
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
+
+// User's Verified Firebase Configuration
 export const firebaseConfig = {
-  apiKey: "AIzaSyADC_DEMO_KEY_PLACEHOLDER_FOR_LOCAL_EVAL",
-  authDomain: "agrabad-college-demo.firebaseapp.com",
-  projectId: "agrabad-college-demo",
-  storageBucket: "agrabad-college-demo.appspot.com",
-  messagingSenderId: "109823482019",
-  appId: "1:109823482019:web:38b0219ca9012"
+  apiKey: "AIzaSyDHfHCJVSdvo4be0Cd38546awAynmlI9ls",
+  authDomain: "agrabad-degree-college.firebaseapp.com",
+  projectId: "agrabad-degree-college",
+  storageBucket: "agrabad-degree-college.firebasestorage.app",
+  messagingSenderId: "364847290659",
+  appId: "1:364847290659:web:934037eb8a6b69c7611496",
+  measurementId: "G-7BP6PQBP46"
 };
 
-// Check if running in demo/offline mode vs live Firebase
-export const isLiveFirebaseConfigured = () => {
-  return firebaseConfig.apiKey && 
-         !firebaseConfig.apiKey.includes('PLACEHOLDER') && 
-         firebaseConfig.projectId !== 'agrabad-college-demo';
-};
+// Initialize Live Firebase Services
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
+
+if (typeof window !== 'undefined') {
+  window.firebaseDb = db;
+  window.firebaseAuth = auth;
+  window.firebaseStorage = storage;
+}
+
+export const isLiveFirebaseConfigured = () => true;
 
 console.log(
-  `%c[Agrabad Degree College System]%c Mode: ${isLiveFirebaseConfigured() ? 'Cloud Firebase' : 'High-Fidelity Local Engine (Mock/Sandbox)'}`,
+  `%c[Agrabad Degree College]%c Live Cloud Firebase connected: ${firebaseConfig.projectId}`,
   'background: #0c2340; color: #fbbf24; font-weight: bold; padding: 4px 8px; border-radius: 4px;',
-  'color: #1a56db; font-weight: bold;'
+  'color: #059669; font-weight: bold;'
 );
+
+// Exports for direct Firestore & Auth operations
+export {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  setDoc,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  query,
+  where,
+  orderBy,
+  serverTimestamp,
+  ref,
+  uploadBytes,
+  getDownloadURL
+};
