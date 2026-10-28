@@ -1,6 +1,6 @@
 /**
  * AGRABAD DEGREE COLLEGE - LIVE FIREBASE CONFIGURATION & MODULAR SDK ADAPTER
- * Connected to live Firebase Project: agrabad-degree-college
+ * Connected to official Firebase Project: agrabad-degree-college-e0de5
  */
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
@@ -34,15 +34,15 @@ import {
   getDownloadURL 
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 
-// User's Verified Firebase Configuration
+// User's Official Firebase Configuration
 export const firebaseConfig = {
-  apiKey: "AIzaSyDHfHCJVSdvo4be0Cd38546awAynmlI9ls",
-  authDomain: "agrabad-degree-college.firebaseapp.com",
-  projectId: "agrabad-degree-college",
-  storageBucket: "agrabad-degree-college.firebasestorage.app",
-  messagingSenderId: "364847290659",
-  appId: "1:364847290659:web:934037eb8a6b69c7611496",
-  measurementId: "G-7BP6PQBP46"
+  apiKey: "AIzaSyDDAXpQebcweoWKY3nqYjJ6-SI_L4uyHVI",
+  authDomain: "agrabad-degree-college-e0de5.firebaseapp.com",
+  projectId: "agrabad-degree-college-e0de5",
+  storageBucket: "agrabad-degree-college-e0de5.firebasestorage.app",
+  messagingSenderId: "968480999212",
+  appId: "1:968480999212:web:a2e14f415933fc4d758e89",
+  measurementId: "G-XQ1Z1ZKYW6"
 };
 
 // Initialize Live Firebase Services
