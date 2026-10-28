@@ -1,7 +1,6 @@
 # Agrabad Degree College Management Information System (ADC-MIS)
 
-[![Live Demo](https://img.shields.io/badge/Demo-Live%20on%20Vercel-success?style=for-the-badge&logo=vercel)](https://quick-fjord-5dc2glg.tmp.now)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Shuharthu/Agrabad-Degree-College)
+[![Live Production](https://img.shields.io/badge/Production-Live%20on%20Vercel-success?style=for-the-badge&logo=vercel)](https://agrabad-college.vercel.app)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Shuharthu%2FAgrabad--Degree--College-181717?style=for-the-badge&logo=github)](https://github.com/Shuharthu/Agrabad-Degree-College)
 
 A complete, responsive, full-stack College Management System engineered for **Agrabad Degree College**, Chattogram, Bangladesh (Established 1995).
